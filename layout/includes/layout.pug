@@ -7,8 +7,8 @@ html(lang=config.language)
     if !is_home()
       meta(name="viewport", content="width=device-width, initial-scale=0.5")
     if is_home()
-      link(rel='stylesheet', href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
-      link(rel='stylesheet', href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css")
+      link(rel='stylesheet', href="/css/bootstrap.min.css")
+      link(rel='stylesheet', href="/css/bootstrap-theme.min.css")
       link(rel='stylesheet', href="/css/home.css")
     else 
       link(rel='stylesheet', href="/css/post.css")
@@ -34,7 +34,7 @@ html(lang=config.language)
       div!= body
     else
       block content
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+    script(src="/js/jquery.min.js")
     if is_home()
       script(src="/js/main.js")
-      script(src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+      script(src="/js/bootstrap.min.js")
