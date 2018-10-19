@@ -1,0 +1,10 @@
+
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Home: /
+
+# Miscelaneous
+favicon: /favicon.ico
