@@ -186,5 +186,5 @@ body.mobile div.ad-banner {
 
 /* code CSS */
 .highlight {
-  overflow: scroll;
+  overflow: auto;
 }
