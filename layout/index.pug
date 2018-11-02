@@ -2,3 +2,12 @@ extends includes/layout.pug
 
 block content
   include includes/recent-posts.pug
+
+  if (theme.paginator)
+    div(class="paginator")
+      -
+        var options = {
+          prev_text: '上一页',
+          next_text: '下一页'
+        }
+      != paginator(options)

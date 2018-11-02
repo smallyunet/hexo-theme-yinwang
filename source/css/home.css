@@ -73,3 +73,23 @@ div.outer {
 body.mobile div.outer {
     margin: 4% 2% 2% 2%;
 }
+
+
+/* paginator CSS */
+.paginator {
+    text-align: right;
+    margin: 4% 10% 4% 10%;
+}
+
+.paginator .page-number,
+.paginator .extend {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 15px 20px;
+}
+
+.paginator .page-number:hover,
+.paginator .extend:hover {
+    background-color: #eee;
+    font-size: 100%;
+}
