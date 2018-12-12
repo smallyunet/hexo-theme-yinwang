@@ -13,6 +13,8 @@ html(lang=config.language)
       link(rel='stylesheet', href="/css/post.css")
     link(rel="icon", href=config.root + 'img/favicon.png')
     title= pageTitle
+    if (theme.baidu_analytics)
+      script(src="/js/baidu_analytics.js")
   body 　　
     if is_home()
       nav.navbar.navbar-default.navbar-fixed-top(style={opacity:".9"}, role="navigation")

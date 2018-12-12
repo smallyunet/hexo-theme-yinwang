@@ -1,11 +1,46 @@
-## 说明
+## Introduction
 
-主题设计来自 [http://www.yinwang.org/](http://www.yinwang.org/)
+This theme was designed by [https://www.yinwang.org/](http://www.yinwang.org/).
 
-The theme is designed by [http://www.yinwang.org/](http://www.yinwang.org/).
+## Demo
 
-## Features
+smallyu's blog [https://blog.smallyu.net](https://blog.smallyu.net)
 
-- 完全还原yinwang.org样式
-- 首页适配移动端
-- 新增分页控制
+## Feature
+
+- Completely restore the style of yinwang.org
+
+- Home page adapter mobile
+
+- Added paging control
+
+- Customize the link to return to the home page
+
+## Confgure
+
+```
+
+# html lang
+language: en
+
+# 导航栏
+menu:
+  About: /about
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# 建议页数大于1开启
+paginator: false
+
+# 文章是否新标签页打开
+posts_blank: false
+
+# 文章末尾
+post_backHome: true            # 文章末尾是否显示返回首页
+post_backHome_prefix: "↶ "     # 返回首页的前缀
+
+# 百度统计 /source/baidu_analytics.js
+baidu_analytics: true
+
+```
