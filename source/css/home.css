@@ -93,3 +93,9 @@ body.mobile div.outer {
     background-color: #eee;
     font-size: 100%;
 }
+
+/* footer */
+.footer {
+    margin-top: 35px;
+    margin-bottom: 25px;
+}

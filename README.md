@@ -15,3 +15,5 @@ smallyu's blog [https://blog.smallyu.net](https://blog.smallyu.net)
 - Added paging control
 
 - Customize the link to return to the home page
+
+- Customize display of copyright information

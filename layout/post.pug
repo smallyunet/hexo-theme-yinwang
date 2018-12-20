@@ -4,9 +4,12 @@ block content
   .inner
     h2= page.title
     != page.content
-    if theme.post_backHome
-      hr
+    if theme.post.backHome
+      if theme.post.backHome_hr
+        hr
       p
-        - var prefix = theme.post_backHome_prefix
+        - var prefix = theme.post.backHome_prefix
+        - var suffix = theme.post.backHome_suffix
         span!= prefix 
-        a(href="/") 返回首页
+        a(href="/")= theme.post.backHome_content
+        span!= suffix
