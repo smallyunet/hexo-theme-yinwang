@@ -4,6 +4,7 @@ language: en
 
 # 导航栏
 menu:
+  语雀: https://www.yuque.com/smallyu
   关于: /about
 
 # 图标
@@ -12,10 +13,14 @@ favicon: /favicon.ico
 # 建议页数大于1开启
 paginator: false
 
+# Header
+header:
+  blank: true     # 头部链接是否新标签页打开
+
 # Footer
 footer:
-  display: true                    # 是否显示footer
-  context: "© blog.smallyu.net"     # footer内容
+  display: false               # 是否显示footer
+  context: "© smallyu.net"     # footer内容
 
 # 文章页
 post:
@@ -25,8 +30,3 @@ post:
   backHome_prefix: "↶ "       # 返回首页的前缀内容
   backHome_content: "返回首页"  # 返回首页的主体内容
   backHome_suffix: ""          # 返回首页的后缀内容
-
-
-# 百度统计 /source/baidu_analytics.js
-baidu_analytics: true
-

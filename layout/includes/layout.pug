@@ -30,7 +30,7 @@ html(lang=config.language)
             ul.nav.navbar-nav.navbar-right
               each url, label in theme.menu
                 li
-                  a(href=url)= label
+                  a(href=url, target=theme.header.blank ? "_blank" : "_self")= label
     if body
       div!= body
     else
