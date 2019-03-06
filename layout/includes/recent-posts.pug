@@ -2,6 +2,6 @@
 .outer
   if page.posts.length > 0
     ul.list-group
-      each post in page.posts.sort('date', -1).limit(10).toArray()
+      each post in page.posts.sort('date', -1).toArray()
         li.list-group-item.title
           a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
