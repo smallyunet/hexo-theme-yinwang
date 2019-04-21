@@ -1,24 +1,24 @@
 ## 简介
 
-样式设计来自 [https://www.yinwang.org/](http://www.yinwang.org/)。
+样式设计来自 [https://www.yinwang.org](http://www.yinwang.org/)
 
 ## 演示
 
-smallyu [https://www.smallyu.net](https://www.smallyu.net)
+smallyu [https://www.smallyu.net](https://www.smallyu.net/)
 
 ## 特性
 
 - 完全还原yinwang.org的样式
 
-- 首页适配移动端
+- [修复] 首页适配移动端
 
-- 首页新增分页显示
+- [新增] 首页分页显示
 
-- 首页新增版权显示
+- [新增] 首页版权显示
 
-- 文章末尾显示返回首页链接
+- [新增] 文章末尾显示返回首页链接
 
-- 自定义链接跳转是否新标签打开
+- [新增] 首页文章是否新标签打开
 
 ## 配置示例
 
@@ -37,11 +37,11 @@ favicon: /favicon.ico
 # 建议页数大于1开启
 paginator: false
 
-# Header
+# 头部
 header:
   blank: true     # 头部链接是否新标签页打开
 
-# Footer
+# 脚部
 footer:
   display: false               # 是否显示footer
   context: "© smallyu.net"     # footer内容

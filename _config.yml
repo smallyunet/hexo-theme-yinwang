@@ -13,11 +13,11 @@ favicon: /favicon.ico
 # 建议页数大于1开启
 paginator: false
 
-# Header
+# 头部
 header:
   blank: true     # 头部链接是否新标签页打开
 
-# Footer
+# 脚部
 footer:
   display: false               # 是否显示footer
   context: "© smallyu.net"     # footer内容
@@ -30,3 +30,4 @@ post:
   backHome_prefix: "↶ "       # 返回首页的前缀内容
   backHome_content: "返回首页"  # 返回首页的主体内容
   backHome_suffix: ""          # 返回首页的后缀内容
+
