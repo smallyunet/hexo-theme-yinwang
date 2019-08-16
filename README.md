@@ -8,9 +8,11 @@ smallyu [https://www.smallyu.net](https://www.smallyu.net/)
 
 ## 特性
 
-- 完全还原yinwang.org的样式
+- ~~完全~~还原yinwang.org的样式
 
 - [修复] 首页适配移动端
+
+- [修整] 文章列表是否显示日期 
 
 - [新增] 首页分页显示
 
@@ -28,6 +30,7 @@ language: en
 
 # 导航栏
 menu:
+  博客: /
   语雀: https://www.yuque.com/smallyu
   关于: /about
 
@@ -40,6 +43,10 @@ paginator: false
 # 头部
 header:
   blank: true     # 头部链接是否新标签页打开
+
+# 文章列表
+list:
+  date: true     # 文章列表是否显示日期
 
 # 脚部
 footer:

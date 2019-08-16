@@ -29,7 +29,7 @@ html(lang=config.language)
           div.navbar-collapse.collapse#bs-example-navbar-collapse-1(style={height:"1px"})
             ul.nav.navbar-nav.navbar-right
               each url, label in theme.menu
-                li
+                li(class=(url == '/' ? 'active' : ''))
                   a(href=url, target=theme.header.blank ? "_blank" : "_self")= label
     if body
       div!= body

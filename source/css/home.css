@@ -22,13 +22,13 @@ body.mobile {
     font-size: 100%;
 }
 
-.title a {
-    display: block;
-}
-
 .title {
     cursor: pointer;
     padding: 15px 20px;
+}
+
+.title a {
+    display: inline-block;
 }
 
 li.title:hover {
@@ -66,14 +66,26 @@ body.mobile .navbar-nav {
     font-size: 36px;
 }
 
-div.outer {
-    margin: 5% 10% 2% 10%;
-}
-
 body.mobile div.outer {
     margin: 4% 2% 2% 2%;
 }
 
+div.outer {
+    margin: 5% 10% 2% 10%;
+}
+
+div.date {
+    font-size: 80%;
+    line-height: 200%;
+    color: darkgray;
+    float: right;
+}
+
+@media screen and (max-width: 640px) { 
+    div.date {
+        display: none;
+    } 
+} 
 
 /* paginator CSS */
 .paginator {
