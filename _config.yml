@@ -6,6 +6,7 @@ language: en
 menu:
   博客: /
   语雀: https://www.yuque.com/smallyu
+  标签云: /tags
   关于: /about
 
 # 图标
@@ -35,4 +36,9 @@ post:
   backHome_prefix: "↶ "       # 返回首页的前缀内容
   backHome_content: "返回首页"  # 返回首页的主体内容
   backHome_suffix: ""          # 返回首页的后缀内容
+
+# 标签云
+tags:
+  all: true       # 标签云页面是否显示全部标签
+
 

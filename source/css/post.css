@@ -191,6 +191,18 @@ body.mobile div.ad-banner {
   display: none;
 }
 
+div.date {
+  font-size: 90%;
+  line-height: 200%;
+  display: inline;
+  margin-left: 20px;
+}
+
+.tag-list .tag-list-count {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
 
 /* code CSS */
 .highlight {
