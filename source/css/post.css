@@ -70,9 +70,10 @@ li {
 
 
 blockquote {
-  border-left: 4px lightgrey solid;
-  padding-left: 5px;
+  border-left: 5px lightgrey solid;
+  padding-left: 15px;
   margin-left: 20px;
+  background: #f4f4f4;
 }
 
 
