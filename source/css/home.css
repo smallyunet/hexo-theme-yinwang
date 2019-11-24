@@ -76,9 +76,8 @@ div.outer {
 
 div.date {
     font-size: 80%;
-    line-height: 200%;
+    display: inline-block;
     color: darkgray;
-    float: right;
 }
 
 @media screen and (max-width: 640px) { 
