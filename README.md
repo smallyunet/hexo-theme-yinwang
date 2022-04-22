@@ -12,20 +12,20 @@
 
 1. 执行 `hexo init blog` 初始化项目。
 
-1. 将主题复制到 `themes` 目录下。
+2. 将主题复制到 `themes` 目录下。
 
-2. 执行以下命令，安装必要依赖
+3. 执行以下命令，安装必要依赖
 
 ```
 npm i --save hexo-renderer-pug
 npm i --save hexo-wordcount-sy  
 ```
 
-3. 将项目 `_config.yml` 中`theme` 的值修改为 `hexo-theme-yinwang`
+4. 将项目 `_config.yml` 中`theme` 的值修改为 `hexo-theme-yinwang`
 
-4. 将项目 `_config.yml` 中 `highlight` 下 `enable` 的值修改为 `false`
+5. 将项目 `_config.yml` 中 `highlight` 下 `enable` 的值修改为 `false`
 
-5. 运行 `hexo clean && hexo server` 启动预览。
+6. 运行 `hexo clean && hexo server` 启动预览。
 
 ## 说明
 
