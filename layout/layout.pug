@@ -1,0 +1,73 @@
+- var pageTitle = page.title || config.title || ''
+- var root = config.root
+
+doctype html
+html(lang=config.language)
+  head
+    title= pageTitle
+    meta(http-equiv="content-type", content="text/html; charset=utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=0.5")
+    
+    link(rel='icon' type='image/svg+xml' href=root+'favicon.svg')
+
+    link(rel='stylesheet', href=root+"css/highlight/xcode.min.css")
+    link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-tooltips.css")
+
+    if is_home() || page.type=='micro-blog' || page.type=='404'
+      link(rel='stylesheet', href=root+"css/bootstrap/bootstrap.min.css")
+      link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-theme.min.css")
+      link(rel='stylesheet', href=root+"css/home.css")
+    else 
+      link(rel='stylesheet', href=root+"css/post.css")
+
+    script(src=root+"js/jquery.min.js")
+
+  body
+    script.
+      if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+        document.body.classList.add('mobile')
+      }
+    if is_home() || page.type=='micro-blog' || page.type=="404"
+      nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
+        div.container-fluid
+          div.navbar-header
+            button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar-bs")
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(
+              href=root,
+              title=config.title_tooltip,
+              data-toggle="tooltip",
+              data-placement="right"
+              )= config.subtitle
+          div.navbar-collapse.collapse#navbar-bs(style={height:"1px"})
+            ul.nav.navbar-nav.navbar-right
+              each url, label in theme.menu
+                li(class=(
+                      (url == '' && is_home()) || (url == 'micro-blog' && page.type=='micro-blog')
+                      ? 'active' : ''
+                    )
+                  )
+                  a(href=root+url, target=theme.header.blank ? "_blank" : "_self")= label
+    
+    if body
+      div!= body
+    else
+      block content
+  
+  script(src=root+"js/highlight.min.js")
+  script(src=root+"js/main.js"+"?v="+theme.version)
+  script(src=root+"js/bootstrap/bootstrap.min.js")
+
+  if page.type=='micro-blog'
+    script(src=root+"js/micro-blog/main.js"+"?v="+theme.version)
+    script(src=root+"js/marked.min.js")
+
+  script(async="" src="https://www.googletagmanager.com/gtag/js?id="+theme.google_analysis_id)
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '#{theme.google_analysis_id}');
+    

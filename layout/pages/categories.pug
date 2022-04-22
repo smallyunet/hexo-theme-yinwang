@@ -1,0 +1,9 @@
+
+.inner
+    h2= page.title
+
+    != page.content
+
+    if site.categories && site.categories.length
+        != list_categories({orderby: 'length', order: -1})
+

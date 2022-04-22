@@ -1,15 +1,18 @@
-extends includes/layout.pug
 
 block content
   .inner
-    h2= page.title
+    if theme.post.title_h1
+      h1= page.title
+      div.time= date(page.date, 'YYYY-MM-DD')
+    else
+      h2= page.title
     != page.content
     if theme.post.backHome
       if theme.post.backHome_hr
         hr
-      p
+      p(class=theme.post.backhome_right ? "textAlignRight" : "")
         - var prefix = theme.post.backHome_prefix
         - var suffix = theme.post.backHome_suffix
         span!= prefix 
-        a(href="/")= theme.post.backHome_content
+        a(href=config.root)= theme.post.backHome_content
         span!= suffix

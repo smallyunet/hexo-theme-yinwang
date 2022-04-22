@@ -1,8 +1,17 @@
-extends includes/layout.pug
 
 block content
-  include includes/recent-posts.pug
-
+  .outer
+    if theme.debug 
+      div= page.posts.length
+    if page.posts.length > 0
+      ul.list-group
+        each post in page.posts.sort('date', -1).toArray()
+          li.list-group-item.title
+            if (theme.list.date)
+              div.date= date(post.date, 'YYYY-MM-DD')
+            a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
+            if (theme.list.wordcount)
+              div.word-count= wordcount(post.content, '') + "字"
   if (theme.paginator)
     div(class="paginator")
       -
@@ -11,7 +20,6 @@ block content
           next_text: '下一页'
         }
       != paginator(options)
-
   if theme.footer.display
     div.footer
       p.text-center= theme.footer.context
