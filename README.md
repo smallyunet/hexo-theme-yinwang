@@ -11,8 +11,8 @@
 安装步骤是**必需**的。
 
 1. 进入博客项目目录
-  - 如果已经创建博客项目，直接进入目录
-  - 如果还未创建博客项目，执行 `hexo init blog` 初始化项目，进入 `blog` 目录，执行 `npm i`
+    - 如果已经创建博客项目，直接进入目录
+    - 如果还未创建博客项目，执行 `hexo init blog` 初始化项目，进入 `blog` 目录，执行 `npm i`
 
 2. 将主题复制到博客项目的 `themes` 目录下
 
@@ -24,9 +24,9 @@ npm i --save hexo-wordcount-sy
 ```
 
 4. 博客项目的 `_config.yml` 文件配置
-  - 将 `theme` 的值修改为 `hexo-theme-yinwang`
-  - 将 `highlight` 下 `enable` 的值修改为 `false`
-  - 将 `subtitle` 的值修改为自己博客的标题
+    - 将 `theme` 的值修改为 `hexo-theme-yinwang`
+    - 将 `highlight` 下 `enable` 的值修改为 `false`
+    - 将 `subtitle` 的值修改为自己博客的标题
 
 5. 主题的 `_config.yml` 文件配置：不必须改，这里是提醒一下和项目的配置文件区分开
 
