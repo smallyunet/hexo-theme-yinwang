@@ -28,9 +28,10 @@ npm i --save hexo-wordcount-sy
     - 将 `highlight` 下 `enable` 的值修改为 `false`
     - 将 `subtitle` 的值修改为自己博客的标题
 
-5. 主题的 `_config.yml` 文件配置：不必须改，这里是提醒一下和项目的配置文件区分开
+5. 主题的 `_config.yml` 文件配置
+    - 不必须改，这里是提醒一下和项目的配置文件区分开
 
-6. 运行 `hexo clean && hexo server` 启动预览。
+6. 运行 `hexo clean && hexo server` 启动预览
 
 ## 说明
 
@@ -42,12 +43,12 @@ hexo new page about
 ```
 
 2. 关于主题配置
-  - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
-  - 有些样式是可以配置的，比如文章标题
+    - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
+    - 有些样式是可以配置的，比如文章标题
 
 3. 关于演示站点
-  - 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用
-  - 主题应该已经去掉了多余的个人内容
+    - 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用
+    - 主题应该已经去掉了多余的个人内容
 
 
 ## 配置示例
