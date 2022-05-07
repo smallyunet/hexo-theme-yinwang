@@ -8,11 +8,13 @@
 
 ## 安装
 
-步骤 2、3、4、5 是**必需**的.
+安装步骤是**必需**的。
 
-1. 执行 `hexo init blog` 初始化项目，进入项目目录
+1. 进入博客项目目录
+  - 如果已经创建博客项目，直接进入目录
+  - 如果还未创建博客项目，执行 `hexo init blog` 初始化项目，进入 `blog` 目录，执行 `npm i`
 
-2. 将主题复制到项目的 `themes` 目录下
+2. 将主题复制到博客项目的 `themes` 目录下
 
 3. 执行以下命令，安装必要依赖
 
@@ -21,9 +23,12 @@ npm i --save hexo-renderer-pug
 npm i --save hexo-wordcount-sy  
 ```
 
-4. 将项目 `_config.yml` 中`theme` 的值修改为 `hexo-theme-yinwang`
+4. 博客项目的 `_config.yml` 文件配置
+  - 将 `theme` 的值修改为 `hexo-theme-yinwang`
+  - 将 `highlight` 下 `enable` 的值修改为 `false`
+  - 将 `subtitle` 的值修改为自己博客的标题
 
-5. 将项目 `_config.yml` 中 `highlight` 下 `enable` 的值修改为 `false`
+5. 主题的 `_config.yml` 文件配置：不必须改，这里是提醒一下和项目的配置文件区分开
 
 6. 运行 `hexo clean && hexo server` 启动预览。
 
@@ -36,11 +41,14 @@ hexo new page tags
 hexo new page about
 ```
 
-2. 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用。
+2. 关于主题配置
+  - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
+  - 有些样式是可以配置的，比如文章标题
 
-3. icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里。
+3. 关于演示站点
+  - 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用
+  - 主题应该已经去掉了多余的个人内容
 
-4. 有些样式是可以配置的，比如文章标题。
 
 ## 配置示例
 
@@ -59,12 +67,12 @@ paginator: false
 
 # 头部
 header:
-  blank: false     # 头部链接是否新标签页打开
+  blank: false      # 头部链接是否新标签页打开
 
 # 文章列表
 list:
-  date: true       # 文章列表是否显示日期
-  wordcount: true   # 是否显示字数统计
+  date: true        # 文章列表是否显示日期
+  wordcount: false  # 是否显示字数统计
 
 # 脚部
 footer:
@@ -73,7 +81,7 @@ footer:
 
 # 文章页
 post:
-  title_h1: false               # 文章是否使用 h1 标题
+  title_h1: false              # 文章是否使用 h1 标题
   blank: false                 # 文章是否新标签页打开
   backHome: false              # 文章末尾是否显示返回首页
   backhome_right: false        # 返回首页内容是否右对齐
@@ -86,8 +94,7 @@ post:
 tags:
   all: true       # 标签云页面是否显示全部标签
 
-google_analysis_id: UA-0000
-
-version: 1
-debug: false
+google_analysis:
+  enable: false
+  id: UA-0000
 ```

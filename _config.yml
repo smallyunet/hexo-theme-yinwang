@@ -13,12 +13,12 @@ paginator: false
 
 # 头部
 header:
-  blank: false     # 头部链接是否新标签页打开
+  blank: false      # 头部链接是否新标签页打开
 
 # 文章列表
 list:
-  date: true       # 文章列表是否显示日期
-  wordcount: true   # 是否显示字数统计
+  date: true        # 文章列表是否显示日期
+  wordcount: false  # 是否显示字数统计
 
 # 脚部
 footer:
@@ -27,7 +27,7 @@ footer:
 
 # 文章页
 post:
-  title_h1: false               # 文章是否使用 h1 标题
+  title_h1: false              # 文章是否使用 h1 标题
   blank: false                 # 文章是否新标签页打开
   backHome: false              # 文章末尾是否显示返回首页
   backhome_right: false        # 返回首页内容是否右对齐
@@ -40,7 +40,6 @@ post:
 tags:
   all: true       # 标签云页面是否显示全部标签
 
-google_analysis_id: UA-0000
-
-version: 1
-debug: false
+google_analysis:
+  enable: false
+  id: UA-0000

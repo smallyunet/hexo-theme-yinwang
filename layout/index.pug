@@ -1,8 +1,6 @@
 
 block content
   .outer
-    if theme.debug 
-      div= page.posts.length
     if page.posts.length > 0
       ul.list-group
         each post in page.posts.sort('date', -1).toArray()
