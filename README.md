@@ -33,14 +33,29 @@ npm i --save hexo-wordcount-sy
 
 6. 运行 `hexo clean && hexo server` 启动预览
 
-## 说明
+## 标签页
 
-1. 如果需要的话，可以执行以下命令新建 “标签云” 和 “关于我” 页面。这些内容是自定义的，可以熟悉一下 hexo 的相关操作。
+运行命令新建页面：
 
 ```
 hexo new page tags
-hexo new page about
 ```
+
+打开文件 `source/tags/index.md`，在文件头部的 front-matter 中添加 `type: tags`，添加之后类似这样：
+
+```
+---
+title: 标签云
+date: 2022-08-30 18:07:20
+type: tags
+---
+```
+
+`title` 可以随意改为想要的标题内容。
+
+## 说明
+
+1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`，这些是主题自定义的内容，不在 hexo 的文档里
 
 2. 关于主题配置
     - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
@@ -49,6 +64,8 @@ hexo new page about
 3. 关于演示站点
     - 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用
     - 主题应该已经去掉了多余的个人内容
+
+4. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
 
 
 ## 配置示例
