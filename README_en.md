@@ -128,6 +128,9 @@ post:
 tags:
    all: true # Whether to display all tags on the tag cloud page
 
+latex:
+   enable: true # Whether to enable latex rendering
+   
 google_analysis:
    enable: false
    id: UA-0000
