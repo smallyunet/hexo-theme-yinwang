@@ -60,6 +60,9 @@ html(lang=config.language)
   script(src=root+"js/main.js")
   script(src=root+"js/bootstrap/bootstrap.min.js")
 
+  if theme.latex.enable
+    script(src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")
+
   if theme.google_analysis.enable
     script(async="" src="https://www.googletagmanager.com/gtag/js?id="+theme.google_analysis.id)
   script.

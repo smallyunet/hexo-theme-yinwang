@@ -40,6 +40,9 @@ post:
 tags:
   all: true       # 标签云页面是否显示全部标签
 
+latex:
+  enable: true    # 是否启用 latex 渲染
+
 google_analysis:
   enable: false
   id: UA-0000

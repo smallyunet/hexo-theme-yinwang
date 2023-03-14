@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Project motivation: "[Blog theme sharing plan (draft)](https://smallyu-net.translate.goog/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp)》
+Project motivation: "[Blog theme sharing plan (draft)](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2 %98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
 
 Style design comes from: [https://www.yinwang.org](http://www.yinwang.org/)
 
@@ -54,6 +54,19 @@ type: tags
 ```
 
 `title` can be freely changed to the desired title content.
+
+## Public rendering
+
+Theme can render Latex formulas, such as writing directly in the article:
+
+```
+This is an inline equation: $$V_{sphere} = \frac{4}{3}\pi r^3$$,<br>
+followed by a display style equation:
+
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
+```
+
+Reference: [How to use LaTeX in Markdown] (https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
 
 ## illustrate
 
