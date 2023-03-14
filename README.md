@@ -14,6 +14,9 @@
 
 模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
+模板额外增加的支持：
+  - Latex 渲染
+
 ## 安装
 
 安装步骤是**必需**的。

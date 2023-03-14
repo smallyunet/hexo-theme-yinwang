@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Project motivation: "[Blog theme sharing plan (draft)](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2 %98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
+Project motivation: "[Blog theme sharing plan (draft)](https://smallyu-net.translate.goog/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp)》
 
 Style design comes from: [https://www.yinwang.org](http://www.yinwang.org/)
 
@@ -13,6 +13,9 @@ Theme style demo: [https://www.smallyu.net](https://www.smallyu.net/)
 Since the installation steps of the theme are cumbersome, in order to use this theme more easily, here is a template site that has been configured with the theme, which can be downloaded and used directly. The template site is initialized with the latest hexo, without any extra modification except the necessary configuration.
 
 Template address: [https://github.com/smallunet/hexo-theme-yinwang-demo](https://github.com/smallunet/hexo-theme-yinwang-demo)
+
+Additional support for templates:
+   - Latex rendering
 
 ## Install
 
