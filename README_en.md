@@ -55,7 +55,7 @@ type: tags
 
 `title` can be freely changed to the desired title content.
 
-## Public rendering
+## Formula rendering
 
 Theme can render Latex formulas, such as writing directly in the article:
 
@@ -65,6 +65,13 @@ followed by a display style equation:
 
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 ```
+
+will render as:
+
+This is an inline equation: $$V_{sphere} = \frac{4}{3}\pi r^3$$,<br>
+followed by a display style equation:
+
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
 
 Reference: [How to use LaTeX in Markdown] (https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
 

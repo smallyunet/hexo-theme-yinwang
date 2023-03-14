@@ -55,7 +55,7 @@ type: tags
 
 `title` 可以随意改为想要的标题内容。
 
-## 公示渲染
+## 公式渲染
 
 主题可以渲染 Latex 公式，比如在文章中直接写入：
 
@@ -65,6 +65,13 @@ followed by a display style equation:
 
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 ```
+
+将渲染为：
+
+This is an inline equation: $$V_{sphere} = \frac{4}{3}\pi r^3$$,<br>
+followed by a display style equation:
+
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
 
 参考：[How to use LaTeX in Markdown](https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
 
