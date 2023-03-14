@@ -8,6 +8,12 @@ Style design comes from: [https://www.yinwang.org](http://www.yinwang.org/)
 
 Theme style demo: [https://www.smallyu.net](https://www.smallyu.net/)
 
+## Templates
+
+Since the installation steps of the theme are cumbersome, in order to use this theme more easily, here is a template site that has been configured with the theme, which can be downloaded and used directly. The template site is initialized with the latest hexo, without any extra modification except the necessary configuration.
+
+Template address: [https://github.com/smallunet/hexo-theme-yinwang-demo](https://github.com/smallunet/hexo-theme-yinwang-demo)
+
 ## Install
 
 The install step is **required**.
@@ -57,17 +63,9 @@ type: tags
 
 ## Formula rendering
 
-Theme can render Latex formulas, such as writing directly in the article:
+You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
 
-```
-$$V_{sphere} = \frac{4}{3}\pi r^3$$
-```
-
-will render as:
-
-$$V_{sphere} = \frac{4}{3}\pi r^3$$
-
-Reference: [How to use LaTeX in Markdown] (https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
+No additional support is required at the topic level.
 
 ## illustrate
 
@@ -128,9 +126,6 @@ post:
 tags:
    all: true # Whether to display all tags on the tag cloud page
 
-latex:
-   enable: true # Whether to enable latex rendering
-   
 google_analysis:
    enable: false
    id: UA-0000

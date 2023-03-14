@@ -8,6 +8,12 @@
 
 主题样式演示：[https://www.smallyu.net](https://www.smallyu.net/)
 
+## 模版
+
+由于主题的安装步骤比较繁琐，为了能够更加简便地使用本主题，这里提供了已经配置好主题的模板站点，可以直接下载使用。模板站点使用最新的 hexo 初始化，除了必要的配置，没有任何多余的修改。
+
+模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
+
 ## 安装
 
 安装步骤是**必需**的。
@@ -57,17 +63,9 @@ type: tags
 
 ## 公式渲染
 
-主题可以渲染 Latex 公式，比如在文章中直接写入：
+可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
 
-```
-$$V_{sphere} = \frac{4}{3}\pi r^3$$
-```
-
-将渲染为：
-
-$$V_{sphere} = \frac{4}{3}\pi r^3$$
-
-参考：[How to use LaTeX in Markdown](https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
+主题层面不需要做额外的支持。
 
 ## 说明
 
@@ -128,9 +126,6 @@ post:
 tags:
   all: true       # 标签云页面是否显示全部标签
 
-latex:
-  enable: true    # 是否启用 latex 渲染
-  
 google_analysis:
   enable: false
   id: UA-0000
