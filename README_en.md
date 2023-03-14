@@ -63,9 +63,7 @@ type: tags
 
 ## Formula rendering
 
-You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
-
-No additional support is required at the topic level.
+You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax). No additional support is required at the topic level.
 
 ## illustrate
 

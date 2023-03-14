@@ -63,9 +63,7 @@ type: tags
 
 ## 公式渲染
 
-可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
-
-主题层面不需要做额外的支持。
+可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
 
 ## 说明
 
