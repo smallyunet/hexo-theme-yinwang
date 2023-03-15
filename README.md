@@ -14,8 +14,11 @@
 
 模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
-模板额外增加的支持：
+模板增加的支持：
   - Latex 渲染
+  - 标签云页面
+  - 分类页面
+  - 关于页面
 
 ## 安装
 
@@ -64,10 +67,6 @@ type: tags
 
 `title` 可以随意改为想要的标题内容。
 
-## 公式渲染
-
-可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
-
 ## 说明
 
 1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`，这些是主题自定义的内容，不在 hexo 的文档里
@@ -82,6 +81,9 @@ type: tags
 
 4. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
 
+## 公式渲染
+
+可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
 
 ## 配置示例
 

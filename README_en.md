@@ -14,8 +14,11 @@ Since the installation steps of the theme are cumbersome, in order to use this t
 
 Template address: [https://github.com/smallunet/hexo-theme-yinwang-demo](https://github.com/smallunet/hexo-theme-yinwang-demo)
 
-Additional support for templates:
+Added support for templates:
    - Latex rendering
+   - Tag cloud page
+   - Category pages
+   - about page
 
 ## Install
 
@@ -64,13 +67,9 @@ type: tags
 
 `title` can be freely changed to the desired title content.
 
-## Formula rendering
-
-You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax). No additional support is required at the topic level.
-
 ## illustrate
 
-1. The function of `type: tags` is to identify the current page as a tab page. Currently, `tags`, `categories`, `about`, and `display` are supported. These are theme-defined content, which are not in the hexo documentation
+1. The function of `type: tags` is to identify the current page as a tab page. Currently, `tags`, `categories`, `about`, and `display` are supported. These are theme-defined content, which are not included in the hexo documentation
 
 2. About theme configuration
      - The path of the icon is under the `source` folder of the project (not the source of the theme), directly put `favicon.svg` into `source`
@@ -82,6 +81,9 @@ You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax
 
 4. If you have any questions or find any problems during the use of the theme, please discuss in issue or pr
 
+## Formula rendering
+
+You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax). No additional support is required at the topic level.
 
 ## Configuration example
 
