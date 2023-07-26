@@ -1,4 +1,4 @@
-[中文 | [English](./README_en.md)]
+新增: 支持微博页面 
 
 ## 简介
 
@@ -16,13 +16,12 @@
 
 模板增加的支持：
   - Latex 渲染
+  - 微博页面
   - 标签云页面
   - 分类页面
   - 关于页面
 
 ## 安装
-
-安装步骤是**必需**的。
 
 1. 进入博客项目目录
     - 如果已经创建博客项目，直接进入目录
@@ -47,6 +46,28 @@ npm i --save hexo-wordcount-sy
 
 6. 运行 `hexo clean && hexo server` 启动预览
 
+## 微博页
+
+需要在主题的配置页面，填写哪一个年份的微博，使用的用户名、仓库名、issue编号。
+
+运行命令新建页面：
+
+```
+hexo new page micro-blog
+```
+
+打开文件 `source/micro-blog/index.md`，在文件头部的 front-matter 中添加 `type: micro-blog`，添加之后类似这样：
+
+```
+---
+title: micro-blog
+date: 2023-07-26 11:03:03
+type: micro-blog
+---
+```
+
+`title` 可以随意改为想要的标题内容。
+
 ## 标签页
 
 运行命令新建页面：
@@ -69,67 +90,15 @@ type: tags
 
 ## 说明
 
-1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`，这些是主题自定义的内容，不在 hexo 的文档里
+1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、'micro-blog'，这些是主题自定义的内容，不在 hexo 的文档里
 
 2. 关于主题配置
     - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
     - 有些样式是可以配置的，比如文章标题
 
-3. 关于演示站点
-    - 微博（micro-blog）的内容是硬编码的，暂时没办法提供便捷的方式去使用
-    - 主题应该已经去掉了多余的个人内容
-
-4. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
+3. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
 
 ## 公式渲染
 
 可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
 
-## 配置示例
-
-```yml
-# html lang
-language: en
-
-# 导航栏 开头不带斜杠
-menu:
-  博客: ''
-  标签云: tags
-  关于: about
-
-# 建议页数大于1开启
-paginator: false
-
-# 头部
-header:
-  blank: false      # 头部链接是否新标签页打开
-
-# 文章列表
-list:
-  date: true        # 文章列表是否显示日期
-  wordcount: false  # 是否显示字数统计
-
-# 脚部
-footer:
-  display: false               # 是否显示footer
-  context: "© smallyu.net"     # footer内容
-
-# 文章页
-post:
-  title_h1: false              # 文章是否使用 h1 标题
-  blank: false                 # 文章是否新标签页打开
-  backHome: false              # 文章末尾是否显示返回首页
-  backhome_right: false        # 返回首页内容是否右对齐
-  backHome_hr: false           # 返回首页前是否显示分割线
-  backHome_prefix: "↶ "        # 返回首页的前缀内容
-  backHome_content: "返回首页"   # 返回首页的主体内容
-  backHome_suffix: ""          # 返回首页的后缀内容
-
-# 标签云
-tags:
-  all: true       # 标签云页面是否显示全部标签
-
-google_analysis:
-  enable: false
-  id: UA-0000
-```

@@ -10,12 +10,10 @@ html {
 table {
   font-size: 100%;
 }
-
 /* end reset CSS */
 
 body {
-  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica,
-    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 18px;
 }
 
@@ -23,22 +21,19 @@ body.mobile {
   font-size: 32px;
 }
 
-P,
-li {
-  line-height: 1.8;
+P, li {
+line-height: 1.8;
 }
 
 H1 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti,
-    SimSun, serif;
-  line-height: 1;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+  line-height: 1.0;
   color: #666666;
   text-align: center;
 }
 
 H2 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti,
-    SimSun, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
   margin-bottom: 40px;
   padding: 5px;
   border-bottom: 2px LightGrey solid;
@@ -48,8 +43,7 @@ H2 {
 }
 
 H3 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti,
-    SimSun, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
   margin-top: 40px;
   margin-bottom: 30px;
   border-bottom: 1px LightGrey solid;
@@ -59,8 +53,7 @@ H3 {
 }
 
 H4 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti,
-    SimSun, serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
   margin-top: 40px;
   margin-bottom: 30px;
   border-bottom: 1px LightGrey solid;
@@ -71,7 +64,7 @@ H4 {
 
 .time {
   text-align: center;
-  line-height: 1;
+  line-height: 1.0;
   font-size: 90%;
   margin-bottom: 50px;
 }
@@ -81,9 +74,11 @@ H4 {
   border: 1px solid LightGrey;
 }
 
+
 li {
   margin-left: 10px;
 }
+
 
 blockquote {
   border-left: 5px lightgrey solid;
@@ -92,12 +87,12 @@ blockquote {
   background: #f4f4f4;
 }
 
+
 pre {
-  font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO",
-    Proggy, monospace;
+  font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
   font-size: 90%;
   background-color: #f8f8f8;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #E0E0E0;
   border-radius: 4px;
   padding: 5px;
   line-height: 1.3;
@@ -107,10 +102,19 @@ pre {
   background-color: #f8f8f8;
 }
 
-p code {
+p code{
   font-size: 90%;
   background-color: #f4f4f4;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #E0E0E0;
+  border-radius: 2px;
+  padding: 0 3px;
+  margin: 0 3px;
+}
+
+li code{
+  font-size: 90%;
+  background-color: #f4f4f4;
+  border: 1px solid #E0E0E0;
   border-radius: 2px;
   padding: 0 3px;
   margin: 0 3px;
@@ -126,6 +130,7 @@ a {
 a:hover {
   background-color: LightGrey;
 }
+
 
 img {
   display: block;
@@ -155,7 +160,7 @@ hr {
 }
 
 p.notice {
-  color: #aa4433;
+  color: #AA4433;
   font-size: 14px;
 }
 
@@ -241,20 +246,16 @@ body.mobile div.ad-banner {
   border-bottom: 0px;
   cursor: pointer;
 }
-
 .modal a:hover {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0,0,0,0);
 }
-
 .blocker {
-  background-color: rgba(0, 0, 0, 0.35) !important;
+  background-color: rgba(0,0,0,0.35) !important;
 }
-
 .modal {
   box-shadow: 0 0 0px #000 !important;
   text-align: center !important;
 }
-
 .modal a.close-modal {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAdxJREFUOBGtVc1KAzEQzmRtvXgS0SoiiCfP7gMUpIK2xZ8X8SCKjyD4KqJipWI92AfYuyepetAq4kUv/nTH+aJZdmMotZrDJvlm5stkZjJLyjOiKMq1208rTLyiFIfMNAE1Ir6Vb0RMh4XC8GEYhu+uOblA7aSxquJ4l1nNuLL0nkhdKq03q4sLBxncbphZH9cbOzJvWqyXmYh2K0sL2zLH0B+wRv2QwRYOiC2WW/iYK+Oa3In3AfQ7KNBruD4hAXf3jxe+mMlpj6zUSPoQHwY5Yjo+NjKrTTY9CSDSG2owmBPVVkJI6kpTLpR4rSfY9wIOgUt/lUZWDC9UnvaqpdINDeqiIRWyQOWK5fL8dUD5fXHpIWsl8ZQy06izHwK5Jr/GzdrZ2ZQltWT1+vlkh1+bko1R1w5cdHR8+iyLoZ9CINSChyDFzpL54g256L+Ih12GPAn9pk0lQKuT+9Dyarra6K/n5CFNxQyepa+fSVTKFFxyGkUpzCyRFDdmbkx9SQGXxkN3CVF7sfpYzsaMpy2pzBVfUsDVtbCNF242US4uJh4lhW1akHQN10uz9xj6yIyucIDLZMy8QekaXtIeQHQc28aSEvhuQb8mte3LnpvUmAX+rcFaQsx/+QV8AuR7CRNqTx1aAAAAAElFTkSuQmCC) !important;
   background-size: 25px 25px !important;
@@ -271,18 +272,14 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-
 table tr {
   background-color: #fff;
   border-top: 1px solid #c6cbd1;
 }
-
-table th,
-table td {
+table th, table td {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
 }
-
 /* table tr:nth-child(2n) {
   background-color: #f6f8fa;
 } */
@@ -294,11 +291,9 @@ table td {
   padding-left: 30px;
   border-radius: 10px;
 }
-
 .card {
   display: flex;
 }
-
 .card-time {
   display: flex;
   align-items: flex-start;
@@ -307,7 +302,6 @@ table td {
   font-style: oblique;
   flex-basis: 80px;
 }
-
 .card-content {
   padding: 0 20px;
   margin: 15px;
@@ -316,27 +310,24 @@ table td {
   flex-basis: 90%;
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 860px) { 
+ 
   .card {
     display: flex;
     flex-direction: column;
   }
-
   .card-time {
     display: flex;
     align-items: flex-end;
     color: #808080;
     font-style: oblique;
   }
-
   .card-time>p {
     margin: 0;
   }
-
   .card-time:empty {
-    display: none;
+    display:none;
   }
-
   .card-content {
     padding: 0 30px;
     margin: 15px 0px;
@@ -344,7 +335,8 @@ table td {
     border-radius: 10px;
     max-width: 97%;
   }
-}
+} 
+
 
 /*********************************/
 
@@ -353,7 +345,6 @@ sd {
   font-size: 75%;
   color: #0006;
 }
-
 sd:hover {
   color: #000f;
 }
@@ -365,7 +356,6 @@ sdr {
   float: right;
   margin-left: 15px;
 }
-
 sdr:hover {
   color: #000f;
 }
@@ -376,7 +366,6 @@ sd-time {
   line-height: 3;
   color: #0006;
 }
-
 sd-time:hover {
   color: #000f;
 }
@@ -412,4 +401,12 @@ mediumseagreen {
 
 tomato {
   color: tomato;
+}
+
+/* print */
+@media print {
+  div.inner {
+    margin: 0% 0%;
+    border: none;
+  }
 }

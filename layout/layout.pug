@@ -13,7 +13,7 @@ html(lang=config.language)
     link(rel='stylesheet', href=root+"css/highlight/xcode.min.css")
     link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-tooltips.css")
 
-    if is_home() || page.type=='404'
+    if is_home() || page.type=='micro-blog' || page.type=='404'
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href=root+"css/home.css")
@@ -27,7 +27,7 @@ html(lang=config.language)
       if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
         document.body.classList.add('mobile')
       }
-    if is_home() || page.type=="404"
+    if is_home() || page.type=='micro-blog' || page.type=="404"
       nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
         div.container-fluid
           div.navbar-header
@@ -60,6 +60,10 @@ html(lang=config.language)
   script(src=root+"js/highlight.min.js")
   script(src=root+"js/main.js")
   script(src=root+"js/bootstrap/bootstrap.min.js")
+
+  if page.type=='micro-blog'
+    script(src=root+"js/micro-blog/main.js")
+    script(src=root+"js/marked.min.js")
 
   if theme.google_analysis.enable
     script(async="" src="https://www.googletagmanager.com/gtag/js?id="+theme.google_analysis.id)

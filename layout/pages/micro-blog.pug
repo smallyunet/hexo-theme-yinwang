@@ -1,0 +1,12 @@
+!= page.content
+
+div.micro-blog
+    div.outer
+        ul.nav.nav-tabs(role="tablist").ul-tabs
+            each blog, index in theme.micro_blogs.reverse()
+                li(role="presentation", class=(index === 0 ? 'active' : ''))
+                    a(href="#"+blog.year aria-controls=blog.year role="tab" data-toggle="tab") #{blog.year}年的微博
+        .tab-content
+            each blog, index in theme.micro_blogs
+                div(id=blog.year class="tab-pane" + (index === 0 ? ' active' : '') role="tabpanel")
+                    ul.list-group(class="ul-content-"+blog.year)
