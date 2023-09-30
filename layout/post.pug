@@ -4,6 +4,16 @@ block content
     if theme.post.title_h1
       h1= page.title
       div.time= date(page.date, 'YYYY-MM-DD')
+      if theme.post.show_tags
+        if page.tags.length
+          ul.tags
+            - page.tags.each(function(tag){
+              li
+                span #
+                a(href= config.root + tag.path)= tag.name
+            - });
+      else 
+        div.margin10
     else
       h2= page.title
     != page.content

@@ -12,8 +12,8 @@ function httpsRequest(options) {
         });
         res.on("end", () => {
           let data = Buffer.concat(chunks);
-          let encoding = res.headers["content-type"].split("charset=")[1]; // 获取实际的编码方式
-          resolve(data.toString(encoding)); // 根据实际的编码方式转换为字符串
+          let encoding = res.headers["content-type"].split("charset=")[1];
+          resolve(data.toString(encoding));
         });
       })
       .on("error", (err) => {
@@ -46,13 +46,17 @@ function getIssueComments(issue, owner, repo, page = 1) {
     })
     .catch((err) => {
       console.log(`[micro-blog] Error with issue ${issue}: `, err);
-      return []; // 在错误发生时返回空数组
+      return [];
     });
 }
 
 
 hexo.extend.filter.register("before_exit", function () {
   let themeConfig = hexo.theme.config;
+
+  if (themeConfig.issue_years.length == 0) {
+    return
+  }
 
   if (!themeConfig.github) {
     console.error("Github configuration not found in _config.yml");
