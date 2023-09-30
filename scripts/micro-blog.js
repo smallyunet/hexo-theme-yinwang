@@ -54,12 +54,11 @@ function getIssueComments(issue, owner, repo, page = 1) {
 hexo.extend.filter.register("before_exit", function () {
   let themeConfig = hexo.theme.config;
 
-  if (themeConfig.issue_years.length == 0) {
+  if (themeConfig && themeConfig.issue_years && themeConfig.issue_years.length == 0) {
     return
   }
 
   if (!themeConfig.github) {
-    console.error("Github configuration not found in _config.yml");
     return;
   }
 
