@@ -6,20 +6,19 @@
 
 主题样式演示：[https://www.smallyu.net](https://www.smallyu.net/)
 
-## 模版
-
-由于主题的安装步骤比较繁琐，为了能够更加简便地使用本主题，这里提供了已经配置好主题的模板站点，可以直接下载使用。模板站点使用最新的 hexo 初始化，除了必要的配置，没有任何多余的修改。
-
-模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
-
-模板增加的支持：
-  - Latex 渲染
-  - 微博页面
-  - 标签云页面
-  - 分类页面
-  - 关于页面
-
 ## 安装
+
+### 使用说明
+
+1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、'micro-blog'，这些是主题自定义的内容，不在 hexo 的文档里
+
+2. 关于主题配置
+    - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
+    - 很多样式是可以配置的，比如文章标题、是否在文章链接后显示标签等
+
+3. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
+
+### 1. 直接安装
 
 1. 进入博客项目目录
     - 如果已经创建博客项目，直接进入目录
@@ -44,7 +43,7 @@ npm i --save hexo-wordcount-sy
 
 6. 运行 `hexo clean && hexo server` 启动预览
 
-## 微博页
+#### 微博页
 
 需要在主题的配置页面，填写哪一个年份的微博，使用的用户名、仓库名、issue编号。
 
@@ -66,7 +65,7 @@ type: micro-blog
 
 `title` 可以随意改为想要的标题内容。
 
-## 标签页
+#### 标签页
 
 运行命令新建页面：
 
@@ -86,15 +85,19 @@ type: tags
 
 `title` 可以随意改为想要的标题内容。
 
-## 说明
+### 2.使用模版
 
-1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、'micro-blog'，这些是主题自定义的内容，不在 hexo 的文档里
+由于主题的安装步骤比较繁琐，为了能够更加简便地使用本主题，这里提供了已经配置好主题的模板站点，可以直接下载使用。模板站点使用最新的 hexo 初始化，除了必要的配置，没有任何多余的修改。
 
-2. 关于主题配置
-    - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
-    - 有些样式是可以配置的，比如文章标题
+模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
-3. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
+模板增加的支持：
+  - Latex 渲染
+  - 微博页面
+  - 标签云页面
+  - 分类页面
+  - 关于页面
+  - 外链
 
 ## 公式渲染
 
