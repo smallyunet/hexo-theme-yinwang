@@ -10,6 +10,14 @@ block content
             a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
             if (theme.list.wordcount)
               div.word-count= wordcount(post.content, '') + "字"
+            if (theme.post.show_tags)
+              if post.tags.length
+                ul.tags
+                  - post.tags.each(function(tag){
+                    li
+                      span #
+                      a(href= config.root + tag.path)= tag.name
+                  - });
   if (theme.paginator)
     div(class="paginator")
       -

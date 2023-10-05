@@ -12,4 +12,4 @@ block content
     if theme.tags.all
       h3 标签云
       if site.tags && site.tags.length
-        != tagcloud()
+        != tagcloud({amount:0, min_font:12})

@@ -114,12 +114,17 @@ div.word-count {
     float: right;
     color: darkgray;
     line-height: 100%;
+    min-width: 60px;
+    font-size: 85%;
 }
 
 @media screen and (max-width: 860px) { 
     div.word-count {
         display: none;
     } 
+    ul.tags {
+        display: none;
+    }
 } 
 
 /* paginator CSS */
@@ -333,3 +338,37 @@ div.word-count {
 }
 
 
+
+
+ul.tags {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 85%;
+    float: right;
+    line-height: 100%;
+    margin-right: 30px;
+}
+
+ul.tags li:not(:last-child) {
+    margin-right: 10px;
+}
+
+ul.tags li {
+    display: inline-block;
+    margin-left: 0;
+}
+
+ul.tags li span {
+    color: darkgray;
+}
+
+ul.tags li a {
+    color: #77b3e0;
+    text-decoration: none;
+}
+
+ul.tags li a:hover {
+    color: #559bce;
+}
