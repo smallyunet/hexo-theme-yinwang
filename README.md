@@ -1,59 +1,65 @@
-## 简介
+[English | [中文](README_zh.md)]
 
-项目动机：《[博客主题共享计划（草稿）](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
+## Introduction
 
-样式设计来自: [https://www.yinwang.org](http://www.yinwang.org/)
+Project Motivation: "[Blog Theme Sharing Initiative (Draft)](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)"
 
-主题样式演示：[https://www.smallyu.net](https://www.smallyu.net/)
+Design inspired by: [https://www.yinwang.org](http://www.yinwang.org/)
 
-## 安装
+Theme Demo: [https://www.smallyu.net](https://www.smallyu.net/)
 
-### 使用说明
+## Installation
 
-1. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、'micro-blog'，这些是主题自定义的内容，不在 hexo 的文档里
+### Instructions
 
-2. 关于主题配置
-    - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
-    - 很多样式是可以配置的，比如文章标题、是否在文章链接后显示标签等
+1. Supports multiple languages; you need to modify the blog project's `_config.yml` file:
+    - en
+    - zh-cn
 
-3. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
+2. `type: tags` serves to identify the current page as a tag page. It currently supports `tags`, `categories`, `about`, `display`, 'micro-blog'. These are custom content for the theme, not in the hexo documentation.
 
-### 1. 直接安装
+3. About theme configuration:
+    - Path for icons is under the project's `source` folder (not the theme's source). Directly place `favicon.svg` into `source`.
+    - Many styles are configurable, like post titles, whether to display tags after post links, etc.
 
-1. 进入博客项目目录
-    - 如果已经创建博客项目，直接进入目录
-    - 如果还未创建博客项目，执行 `hexo init blog` 初始化项目，进入 `blog` 目录，执行 `npm i`
+4. If you have any questions or encounter any issues while using the theme, feel free to discuss in the issue section or submit a PR.
 
-2. 将主题复制到博客项目的 `themes` 目录下
+### Method 1: Direct Installation
 
-3. 执行以下命令，安装必要依赖
+1. Navigate to the blog project directory.
+    - If you've already created a blog project, directly navigate to the directory.
+    - If you haven't yet, run `hexo init blog` to initialize the project. Enter the `blog` directory and run `npm i`.
+
+2. Copy the theme into the `themes` directory of your blog project.
+
+3. Run the following commands to install necessary dependencies:
 
 ```
 npm i --save hexo-renderer-pug
 npm i --save hexo-wordcount-sy  
 ```
 
-4. 博客项目的 `_config.yml` 文件配置
-    - 将 `theme` 的值修改为 `hexo-theme-yinwang`
-    - 将 `highlight` 下 `enable` 的值修改为 `false`
-    - 将 `subtitle` 的值修改为自己博客的标题
+4. Configuration for the blog project's `_config.yml`:
+    - Set the `theme` value to `hexo-theme-yinwang`.
+    - Set the `highlight` -> `enable` value to `false`.
+    - Modify the `subtitle` value to your blog's title.
 
-5. 主题的 `_config.yml` 文件配置
-    - 不必须改，这里是提醒一下和项目的配置文件区分开
+5. Configuration for the theme's `_config.yml`:
+    - No mandatory changes, just a reminder to differentiate from the project's configuration file.
 
-6. 运行 `hexo clean && hexo server` 启动预览
+6. Run `hexo clean && hexo server` to start the preview.
 
-#### 微博页
+#### Micro-blog Page
 
-需要在主题的配置页面，填写哪一个年份的微博，使用的用户名、仓库名、issue编号。
+Specify which year's micro-blog to show in the theme's configuration, along with the username, repository name, and issue number.
 
-运行命令新建页面：
+Run this command to create a new page:
 
 ```
 hexo new page micro-blog
 ```
 
-打开文件 `source/micro-blog/index.md`，在文件头部的 front-matter 中添加 `type: micro-blog`，添加之后类似这样：
+Open the file `source/micro-blog/index.md` and add `type: micro-blog` to the front-matter, it should look like this:
 
 ```
 ---
@@ -63,43 +69,107 @@ type: micro-blog
 ---
 ```
 
-`title` 可以随意改为想要的标题内容。
+You can change the `title` as desired.
 
-#### 标签页
+#### Tags Page
 
-运行命令新建页面：
+Run this command to create a new page:
 
 ```
 hexo new page tags
 ```
 
-打开文件 `source/tags/index.md`，在文件头部的 front-matter 中添加 `type: tags`，添加之后类似这样：
+Open the file `source/tags/index.md` and add `type: tags` to the front-matter, it should look like this:
 
 ```
 ---
-title: 标签云
+title: Tags Cloud
 date: 2022-08-30 18:07:20
 type: tags
 ---
 ```
 
-`title` 可以随意改为想要的标题内容。
 
-### 2.使用模版
+You can change the `title` as desired.
 
-由于主题的安装步骤比较繁琐，为了能够更加简便地使用本主题，这里提供了已经配置好主题的模板站点，可以直接下载使用。模板站点使用最新的 hexo 初始化，除了必要的配置，没有任何多余的修改。
+### Method 2: Using the Template
 
-模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
+Given the complexity of the theme installation, for convenience, a template site is provided with the theme already configured. It can be downloaded and used directly. The template site is initialized with the latest hexo and has no modifications other than necessary configurations.
 
-模板增加的支持：
-  - Latex 渲染
-  - 微博页面
-  - 标签云页面
-  - 分类页面
-  - 关于页面
-  - 外链
+Template URL: [https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
-## 公式渲染
+Additional features in the template:
+  - Latex rendering
+  - Micro-blog page
+  - Tags cloud page
+  - Categories page
+  - About page
+  - External links
 
-可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
+### Theme Configuration Example
+
+```
+# Navigation bar without starting with a slash
+menu:
+  Blog: ''
+  Micro-blog: micro-blog
+  Tag Cloud: tags
+  About: about
+
+# Recommended to enable when the page count is more than 1
+paginator: false
+
+# Header section
+header:
+  blank: false     # Open header links in a new tab
+
+# Article list
+list:
+  date: true       # Display date in the article list
+  wordcount: true  # Display word count
+
+# Footer section
+footer:
+  display: false               # Display the footer
+  context: "© smallyu.net"     # Footer content
+
+# Article page
+post:
+  title_h1: true               # Use h1 for article titles
+  blank: false                 # Open articles in a new tab
+  backHome: false              # Display back to home at the end of the article
+  backhome_right: false        # Align back to home content to the right
+  backHome_hr: false           # Display a divider line before back to home
+  backHome_prefix: "↶ "        # Prefix content for back to home
+  backHome_content: "Back to Home"  # Main content for back to home
+  backHome_suffix: ""          # Suffix content for back to home
+  show_tags: true              # Display tags at the end of the article
+
+# Tag cloud
+tags:
+  all: true       # Display all tags on the tag cloud page
+
+# Micro-blog
+github:
+  owner: smallyunet
+  repo: hexo-blog
+micro_blogs:
+  - year: 2020
+    issue: 7
+  - year: 2021
+    issue: 10
+  - year: 2022
+    issue: 19
+  - year: 2023
+    issue: 29
+issue_years: []
+
+google_analysis:
+  enable: true
+  id: UA-160006603-1
+```
+
+## Formula Rendering
+
+You can use this hexo plugin: [https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax). There's no need for additional support at the theme level.
 

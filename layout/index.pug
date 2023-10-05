@@ -9,7 +9,7 @@ block content
               div.date= date(post.date, 'YYYY-MM-DD')
             a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
             if (theme.list.wordcount)
-              div.word-count= wordcount(post.content, '') + "字"
+              div.word-count= wordcount(post.content, '') +  __('word_count')
             if (theme.post.show_tags)
               if post.tags.length
                 ul.tags
@@ -22,8 +22,8 @@ block content
     div(class="paginator")
       -
         var options = {
-          prev_text: '上一页',
-          next_text: '下一页'
+          prev_text: __('prev_page'),
+          next_text: __('next_page')
         }
       != paginator(options)
   if theme.footer.display

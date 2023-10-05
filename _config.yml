@@ -1,53 +1,58 @@
-
-# 导航栏 开头不带斜杠
+# Navigation bar without starting with a slash
 menu:
-  博客: ''
-  微博: micro-blog
-  标签云: tags
-  关于: about
+  Blog: ''
+  Micro-blog: micro-blog
+  Tag Cloud: tags
+  About: about
 
-# 建议页数大于1开启
+# Recommended to enable when the page count is more than 1
 paginator: false
 
-# 头部
+# Header section
 header:
-  blank: false     # 头部链接是否新标签页打开
+  blank: false     # Open header links in a new tab
 
-# 文章列表
+# Article list
 list:
-  date: true       # 文章列表是否显示日期
-  wordcount: true   # 是否显示字数统计
+  date: true       # Display date in the article list
+  wordcount: true  # Display word count
 
-# 脚部
+# Footer section
 footer:
-  display: false               # 是否显示footer
-  context: "© smallyu.net"     # footer内容
+  display: false               # Display the footer
+  context: "© smallyu.net"     # Footer content
 
-# 文章页
+# Article page
 post:
-  title_h1: false               # 文章是否使用 h1 标题
-  blank: false                 # 文章是否新标签页打开
-  backHome: false              # 文章末尾是否显示返回首页
-  backhome_right: false        # 返回首页内容是否右对齐
-  backHome_hr: false           # 返回首页前是否显示分割线
-  backHome_prefix: "↶ "        # 返回首页的前缀内容
-  backHome_content: "返回首页"   # 返回首页的主体内容
-  backHome_suffix: ""          # 返回首页的后缀内容
-  show_tags: true              # 文章末尾是否显示标签
+  title_h1: true               # Use h1 for article titles
+  blank: false                 # Open articles in a new tab
+  backHome: false              # Display back to home at the end of the article
+  backhome_right: false        # Align back to home content to the right
+  backHome_hr: false           # Display a divider line before back to home
+  backHome_prefix: "↶ "        # Prefix content for back to home
+  backHome_content: "Back to Home"  # Main content for back to home
+  backHome_suffix: ""          # Suffix content for back to home
+  show_tags: true              # Display tags at the end of the article
 
-# 标签云
+# Tag cloud
 tags:
-  all: true       # 标签云页面是否显示全部标签
+  all: true       # Display all tags on the tag cloud page
 
-# 微博
+# Micro-blog
 github:
   owner: smallyunet
   repo: hexo-blog
 micro_blogs:
+  - year: 2020
+    issue: 7
+  - year: 2021
+    issue: 10
+  - year: 2022
+    issue: 19
   - year: 2023
-    issue: 1
+    issue: 29
 issue_years: []
 
 google_analysis:
-  enable: false
-  id: UA-0000000-1
+  enable: true
+  id: UA-160006603-1

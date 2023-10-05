@@ -6,6 +6,6 @@
 
     if site.tags && site.tags.length
         != tagcloud({amount:0, min_font:12})
-        h3 标签列表
+        h3= __('tag_list')
         != list_tags({orderby: 'length', order: -1})
 

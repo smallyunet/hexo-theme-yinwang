@@ -159,7 +159,7 @@ div.word-count {
 
 /* ----------------------  micro blog ----------------------- */
 
-/* 加载动画 */
+/* load animation */
 @keyframes ldio-fwkeq5l2tj8 {
   0% {
     top: 96px;
@@ -215,7 +215,7 @@ div.word-count {
 
 
 
-/* ---------- 微博内容样式 ---------- */
+/* ---------- micro blog content style ---------- */
 
 .micro-blog {
     font-size: 16px;
@@ -315,7 +315,7 @@ div.word-count {
     padding: 0px 25px;
 }
 
-/* 表格样式 */
+/* table style */
 .micro-blog table tr {
     background-color: #fff;
     border-top: 1px solid #c6cbd1;

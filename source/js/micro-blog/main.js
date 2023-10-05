@@ -1,12 +1,12 @@
 Date.prototype.format = function (fmt) {
   var o = {
-    "M+": this.getMonth() + 1, //月份
-    "d+": this.getDate(), //日
-    "h+": this.getHours(), //小时
-    "m+": this.getMinutes(), //分
-    "s+": this.getSeconds(), //秒
-    "q+": Math.floor((this.getMonth() + 3) / 3), //季度
-    S: this.getMilliseconds(), //毫秒
+    "M+": this.getMonth() + 1,
+    "d+": this.getDate(),
+    "h+": this.getHours(),
+    "m+": this.getMinutes(),
+    "s+": this.getSeconds(),
+    "q+": Math.floor((this.getMonth() + 3) / 3),
+    S: this.getMilliseconds(),
   };
   if (/(y+)/.test(fmt)) {
     fmt = fmt.replace(
@@ -27,7 +27,7 @@ Date.prototype.format = function (fmt) {
 
 let defaultYear = "2023";
 var getActive = () => {
-  // 根据路由指定 active tab
+  // Set the active tab based on the route
   let seg =
     location.href.split("#").length >= 2
       ? location.href.split("#")[1]
@@ -52,7 +52,7 @@ let clickUrl = () => {
 };
 
 var getContent = (year) => {
-  // 内容渲染
+  // render content
   let ul = $(`.micro-blog .ul-content-${year}`);
   ul.append(`
         <div style="text-align:center;">
@@ -64,7 +64,7 @@ var getContent = (year) => {
 
   let process = (res) => {
     ul.html(``);
-    // 时间倒序
+    // order by time
     res.sort((a, b) => {
       return a.created_at >= b.created_at ? -1 : 1;
     });
@@ -75,8 +75,10 @@ var getContent = (year) => {
       item += `<div class="date">${date}`;
       item += `<a href="#${year}-${id}" name=${year}-${id}>#${id}</a>`;
       item += `</div>`;
-      let body = i.body ? i.body : ""; // 添加这行，确保 body 不为空
-      item += `<div class="content" style="margin-top:5px;">${marked(body)}</div>`; // 使用 body 代替 i.body
+      let body = i.body ? i.body : ""; // make sure body not empty
+      item += `<div class="content" style="margin-top:5px;">${marked(
+        body
+      )}</div>`; 
       item += `</li>`;
       ul.append(item);
       id -= 1;
@@ -84,21 +86,21 @@ var getContent = (year) => {
   };
 
   let processError = (jqXHR, textStatus, errorThrown) => {
-    ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`);
+    ul.html(`Network error, please refresh the page and try again. <a href="/micro-blog">Click to refresh</a>`);
     let outer = $(".outer");
     outer.append(`
             <br>
-            <p style="font-size:85%;">状态：${textStatus}</p>
-            <p style="font-size:85%;">信息：${errorThrown}</p>
+            <p style="font-size:85%;">Status: ${textStatus}</p>
+            <p style="font-size:85%;">Info: ${errorThrown}</p>
         `);
   };
 
   let reqUrlWithProcess = () => {
-    // 获取当前页面的路径
+     // Get the current page's path
     let path = window.location.pathname;
-    // 分割路径，提取除最后一个以外的所有部分
-    let dir = path.split('/').slice(0, -2).join('/');
-    // 拼接基本URL和请求URL
+    // Split the path and extract all parts except the last one
+    let dir = path.split("/").slice(0, -2).join("/");
+    // Concatenate the base URL with the request URL
     let url = `${dir}/micro-blog/${year}.json`;
     $.ajax({
       url: url,
@@ -115,21 +117,20 @@ var getContent = (year) => {
     });
   };
 
-  // 先读取预加载的内容
+  // pre load page content first
   let res = localStorage.getItem(`micro-blog-${year}`);
   if (res) {
     process(JSON.parse(res));
   }
-  // 然后发请求
+  // then send request
   reqUrlWithProcess();
 };
 
 $(() => {
   getActive();
-  // 遍历所有 id 匹配 "20\d{2}" 的 div 元素，获取它们的 id
   $('div[id^="20"]').each(function () {
-    let year = this.id; // 获取 id，这里的 id 就是年份
-    getContent(year); // 使用获取到的年份调用 getContent
+    let year = this.id; 
+    getContent(year);
   });
   clickUrl();
 });

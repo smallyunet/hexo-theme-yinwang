@@ -10,6 +10,6 @@ block content
           if (theme.list.date)
             div.date= date(post.date, 'YYYY/M/D')
     if theme.tags.all
-      h3 标签云
+      h3= __('tag_cloud')
       if site.tags && site.tags.length
         != tagcloud({amount:0, min_font:12})
