@@ -1,6 +1,5 @@
 const fs = require("fs");
 const https = require("https");
-const path = require("path");
 
 function httpsRequest(options) {
   return new Promise((resolve, reject) => {
@@ -52,27 +51,35 @@ function getIssueComments(issue, owner, repo, page = 1) {
 
 
 hexo.extend.filter.register("before_exit", function () {
+  let cmdArg = hexo.env.cmd;
+  let yearArgs = hexo.env.args._;
   let themeConfig = hexo.theme.config;
 
-  if (themeConfig && themeConfig.issue_years && themeConfig.issue_years.length == 0) {
-    return
-  }
-
-  if (!themeConfig.github) {
+  if (!themeConfig || !themeConfig.github) {
     return;
   }
 
   let owner = themeConfig.github.owner;
   let repo = themeConfig.github.repo;
-  let issueYears = new Set(themeConfig.issue_years);
+  let issueYears = new Set();
+
+  if (cmdArg === 'generate' && yearArgs.length > 0) {
+    for (let year of yearArgs) {
+      issueYears.add(year);
+    }
+  } else {
+    for (let year of themeConfig.issue_years) {
+      issueYears.add(year);
+    }
+  }
+
+  if (issueYears.size === 0) {
+    return;
+  }
 
   let yearPromises = [];
 
   for (let blog of themeConfig.micro_blogs) {
-    if (!issueYears.has(blog.year)) {
-      continue;
-    }
-
     let filePath = `./source/micro-blog/${blog.year}.json`;
 
     let yearPromise = getIssueComments(blog.issue, owner, repo)

@@ -12,11 +12,11 @@ Theme Demo: [https://www.smallyu.net](https://www.smallyu.net/)
 
 ### Instructions
 
-1. Supports multiple languages; you need to modify the blog project's `_config.yml` file:
+1. Supports multiple languages. To modify, change the `language` field in the blog project's `_config.yml` file.
     - en
     - zh-cn
 
-2. `type: tags` serves to identify the current page as a tag page. It currently supports `tags`, `categories`, `about`, `display`, 'micro-blog'. These are custom content for the theme, not in the hexo documentation.
+2. The purpose of `type: tags` is to identify the current page as a tag page. Currently, it supports `tags`, `categories`, `about`, `display`, and `micro-blog`. These are custom contents of the theme and are not documented in Hexo's official documentation.
 
 3. About theme configuration:
     - Path for icons is under the project's `source` folder (not the theme's source). Directly place `favicon.svg` into `source`.
@@ -51,7 +51,11 @@ npm i --save hexo-wordcount-sy
 
 #### Micro-blog Page
 
+##### Configuration
+
 Specify which year's micro-blog to show in the theme's configuration, along with the username, repository name, and issue number.
+
+##### Create a New Page
 
 Run this command to create a new page:
 
@@ -70,6 +74,12 @@ type: micro-blog
 ```
 
 You can change the `title` as desired.
+
+##### Update Microblog
+
+1. If the `issue_years` content in the configuration file is not empty, the corresponding microblog content will be automatically fetched when executing the `hexo generate` command.
+
+2. You can also keep the `issue_years` content in the configuration file empty and execute a command like `hexo generate 2023`.
 
 #### Tags Page
 

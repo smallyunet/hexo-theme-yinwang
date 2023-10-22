@@ -12,11 +12,11 @@
 
 ### 使用说明
 
-1. 支持多语言，需要修改博客项目的 `_config.yml` 文件：
+1. 支持多语言，需要修改博客项目 `_config.yml` 文件中的 `language` 字段：
     - en
     - zh-cn
 
-2. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、'micro-blog'，这些是主题自定义的内容，不在 hexo 的文档里
+2. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、`micro-blog`，这些是主题自定义的内容，不在 hexo 的文档里
 
 3. 关于主题配置
     - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
@@ -51,7 +51,11 @@ npm i --save hexo-wordcount-sy
 
 #### 微博页
 
+##### 配置
+
 需要在主题的配置页面，填写哪一个年份的微博，使用的用户名、仓库名、issue编号。
+
+##### 新建页面
 
 运行命令新建页面：
 
@@ -70,6 +74,12 @@ type: micro-blog
 ```
 
 `title` 可以随意改为想要的标题内容。
+
+##### 更新微博
+
+1. 如果配置文件的 `issue_years` 内容不为空，会在执行 `hexo generate` 命令时自动获取对应的微博内容。
+
+2. 也可以保持配置文件的 `issue_years` 内容为空，执行 `hexo generate 2023` 这样的命令。
 
 #### 标签页
 
