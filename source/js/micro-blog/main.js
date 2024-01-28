@@ -25,7 +25,7 @@ Date.prototype.format = function (fmt) {
   return fmt;
 };
 
-let defaultYear = "2023";
+let defaultYear = new Date().getFullYear().toString();
 var getActive = () => {
   // Set the active tab based on the route
   let seg =
