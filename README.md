@@ -141,7 +141,8 @@ list:
 # Footer section
 footer:
   display: false               # Display the footer
-  context: "© smallyu.net"     # Footer content
+  href: ""                     # Display the footer as an href
+  text: "© domain name"        # footer content
 
 # Article page
 post:
