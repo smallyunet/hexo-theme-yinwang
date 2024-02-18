@@ -140,7 +140,8 @@ list:
 # 脚部
 footer:
   display: false               # 是否显示footer
-  context: "© domain name"     # footer内容
+  href: ""                     # 是否给底部内容加上超链接，可以用于展示ICP备案链接
+  text: "© domain name"        # footer内容, 当href为空时，仅展示此文字
 
 # 文章页
 post:

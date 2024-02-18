@@ -28,4 +28,8 @@ block content
       != paginator(options)
   if theme.footer.display
     div.footer
-      p.text-center= theme.footer.context
+      if theme.footer.href
+        p.text-center
+          a(href=theme.footer.href)= theme.footer.text
+      else
+        p.text-center= theme.footer.text
