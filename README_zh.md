@@ -170,7 +170,7 @@ issue_years: []
 
 google_analysis:
   enable: false
-  id: UA-0000000-1
+  id: G-XXXXXXXXXXX
 
 ```
 
