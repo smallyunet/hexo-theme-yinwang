@@ -177,7 +177,7 @@ issue_years: []
 
 google_analysis:
   enable: true
-  id: UA-160006603-1
+  id: G-XXXXXXXXXXX
 ```
 
 ## Formula Rendering
