@@ -50,7 +50,7 @@ function getIssueComments(issue, owner, repo, page = 1) {
 }
 
 
-hexo.extend.filter.register("before_exit", function () {
+hexo.extend.filter.register("before_generate", function () {
   let cmdArg = hexo.env.cmd;
   let yearArgs = hexo.env.args._;
   let themeConfig = hexo.theme.config;
