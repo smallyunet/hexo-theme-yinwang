@@ -26,6 +26,7 @@ Date.prototype.format = function (fmt) {
 };
 
 let defaultYear = new Date().getFullYear().toString();
+
 var getActive = () => {
   // Set the active tab based on the route
   let seg =
@@ -39,16 +40,28 @@ var getActive = () => {
   ele2.addClass("active");
 };
 
-let clickUrl = () => {
-  let seg =
-    location.href.split("#").length >= 2
-      ? location.href.split("#")[1]
-      : defaultYear;
-  let arr = seg.split("-");
-  if (arr.length < 2) {
-    return;
+let smoothScrollTo = (elementId) => {
+  document.getElementById(elementId)?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
+let scrollToHash = () => {
+  let seg = location.href.split("#")[1];
+  if (!seg) return;
+  let [year, id] = seg.split("-");
+  if (id) {
+    const scrollToElement = () => {
+      const targetElement = document.getElementById(`${year}-${id}`);
+      if (targetElement) {
+        smoothScrollTo(`${year}-${id}`);
+      } else {
+        requestAnimationFrame(scrollToElement);
+      }
+    };
+    scrollToElement();
   }
-  document.location.href = `#${arr[0]}-${arr[1]}`;
 };
 
 var getContent = (year) => {
@@ -63,26 +76,21 @@ var getContent = (year) => {
     `);
 
   let process = (res) => {
-    ul.html(``);
-    // order by time
+    ul.empty();
     res.sort((a, b) => {
       return a.created_at >= b.created_at ? -1 : 1;
     });
-    let id = res.length;
-    res.map((i) => {
+    res.forEach((i, index) => {
       let date = new Date(i.created_at).format("yyyy年MM月dd日 hh时mm分");
-      let item = `<li class="list-group-item">`;
-      item += `<div class="date">${date}`;
-      item += `<a href="#${year}-${id}" name=${year}-${id}>#${id}</a>`;
-      item += `</div>`;
-      let body = i.body ? i.body : ""; // make sure body not empty
-      item += `<div class="content" style="margin-top:5px;">${marked(
-        body
-      )}</div>`; 
-      item += `</li>`;
+      let id = res.length - index;
+      let item = `<li class="list-group-item" id="${year}-${id}">
+        <div class="date">${date}<a href="#${year}-${id}" name=${year}-${id}>#${id}</a></div>
+        <div class="content" style="margin-top:5px;">${marked(i.body || "")}</div>
+      </li>`;
       ul.append(item);
-      id -= 1;
     });
+
+    scrollToHash();
   };
 
   let processError = (jqXHR, textStatus, errorThrown) => {
@@ -96,41 +104,56 @@ var getContent = (year) => {
   };
 
   let reqUrlWithProcess = () => {
-     // Get the current page's path
-    let path = window.location.pathname;
-    // Split the path and extract all parts except the last one
-    let dir = path.split("/").slice(0, -2).join("/");
-    // Concatenate the base URL with the request URL
-    let url = `${dir}/micro-blog/${year}.json`;
+    let cacheKey = `micro-blog-${year}`;
+    let cached = localStorage.getItem(cacheKey);
+    let cacheDateKey = `${cacheKey}-date`;
+    let cacheDate = localStorage.getItem(cacheDateKey);
+    
+    if (cached && cacheDate && new Date().getTime() - new Date(cacheDate).getTime() < 24 * 60 * 60 * 1000) {
+      process(JSON.parse(cached));
+      return;
+    }
+
+    let path = window.location.pathname.split("/").slice(0, -2).join("/");
+    let url = `${path}/micro-blog/${year}.json`;
     $.ajax({
       url: url,
       success: (res) => {
         process(res);
-        localStorage.setItem(`micro-blog-${year}`, JSON.stringify(res));
+        localStorage.setItem(cacheKey, JSON.stringify(res));
+        localStorage.setItem(cacheDateKey, new Date().toISOString());
       },
       error: (jqXHR, textStatus, errorThrown) => {
-        let res = localStorage.getItem(`micro-blog-${year}`);
-        if (res == null) {
-          processError(jqXHR, textStatus, errorThrown);
-        }
+        if (!cached) processError(jqXHR, textStatus, errorThrown);
       },
     });
   };
 
-  // pre load page content first
   let res = localStorage.getItem(`micro-blog-${year}`);
   if (res) {
     process(JSON.parse(res));
   }
-  // then send request
   reqUrlWithProcess();
 };
 
 $(() => {
   getActive();
+
   $('div[id^="20"]').each(function () {
-    let year = this.id; 
-    getContent(year);
+    let year = this.id;
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            getContent(year);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(this);
   });
-  clickUrl();
+
+  scrollToHash();
 });
