@@ -1,27 +1,32 @@
 Date.prototype.format = function (fmt) {
   var o = {
-    "M+": this.getMonth() + 1,
-    "d+": this.getDate(),
-    "h+": this.getHours(),
-    "m+": this.getMinutes(),
-    "s+": this.getSeconds(),
-    "q+": Math.floor((this.getMonth() + 3) / 3),
-    S: this.getMilliseconds(),
+    "M+": this.getMonth() + 1,                 
+    "d+": this.getDate(),                     
+    "h+": this.getHours(),                    
+    "m+": this.getMinutes(),                 
+    "s+": this.getSeconds(),                 
+    "q+": Math.floor((this.getMonth() + 3) / 3), 
+    S: this.getMilliseconds(),               
   };
+  
   if (/(y+)/.test(fmt)) {
+    const yearMatch = fmt.match(/(y+)/);
     fmt = fmt.replace(
-      RegExp.$1,
-      (this.getFullYear() + "").substr(4 - RegExp.$1.length)
+      yearMatch[1],
+      (this.getFullYear() + "").slice(-yearMatch[1].length)
     );
   }
+  
   for (var k in o) {
     if (new RegExp("(" + k + ")").test(fmt)) {
+      const match = fmt.match(new RegExp("(" + k + ")"));
       fmt = fmt.replace(
-        RegExp.$1,
-        RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+        match[1],
+        match[1].length === 1 ? o[k] : ("00" + o[k]).slice(-match[1].length)
       );
     }
   }
+  
   return fmt;
 };
 
@@ -41,10 +46,15 @@ var getActive = () => {
 };
 
 let smoothScrollTo = (elementId) => {
-  document.getElementById(elementId)?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  const element = document.getElementById(elementId);
+  if (element) {
+    const yOffset = -20;
+    const yPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({
+      top: yPosition,
+      behavior: "smooth",
+    });
+  }
 };
 
 let scrollToHash = () => {
@@ -56,6 +66,10 @@ let scrollToHash = () => {
       const targetElement = document.getElementById(`${year}-${id}`);
       if (targetElement) {
         smoothScrollTo(`${year}-${id}`);
+        targetElement.classList.add("highlight");
+        setTimeout(() => {
+          targetElement.classList.remove("highlight");
+        }, 1500);
       } else {
         requestAnimationFrame(scrollToElement);
       }
@@ -137,6 +151,7 @@ var getContent = (year) => {
 };
 
 $(() => {
+  // Existing initialization
   getActive();
 
   $('div[id^="20"]').each(function () {
@@ -156,4 +171,27 @@ $(() => {
   });
 
   scrollToHash();
+
+  // Add click event listener to all links within .nav-tabs and .tab-content
+  $(document).on('click', '.nav-tabs a, .tab-content a', function (event) {
+    let href = $(this).attr('href');
+    if (href && href.startsWith("#")) {
+      event.preventDefault(); // Prevent the default anchor behavior
+      let seg = href.substring(1); // Remove the '#' from the start
+      let [year, id] = seg.split("-");
+      
+      if (id) {
+        smoothScrollTo(`${year}-${id}`);
+        const targetElement = document.getElementById(`${year}-${id}`);
+        if (targetElement) {
+          targetElement.classList.add("highlight");
+          setTimeout(() => {
+            targetElement.classList.remove("highlight");
+          }, 1500);
+        }
+      } else {
+        getActive(); // To handle the tab navigation case
+      }
+    }
+  });
 });
