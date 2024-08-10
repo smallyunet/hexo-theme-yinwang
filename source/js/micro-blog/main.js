@@ -32,14 +32,15 @@ Date.prototype.format = function (fmt) {
 
 let defaultYear = new Date().getFullYear().toString();
 
-var getActive = () => {
-  // Set the active tab based on the route
-  let seg =
-    location.href.split("#").length >= 2
-      ? location.href.split("#")[1]
-      : defaultYear;
-  let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0] : defaultYear;
-  let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent();
+var getActive = (seg) => {
+  let seg2 = seg.split("-")[0] || defaultYear;
+  let ele = $(`.nav.nav-tabs a[href="#${seg2}"]`).parent();
+  
+  // Remove active class from previously active tabs
+  $(".nav.nav-tabs li").removeClass("active");
+  $(".tab-content .tab-pane").removeClass("active");
+  
+  // Add active class to the new tab and corresponding content
   ele.addClass("active");
   let ele2 = $(`.tab-content #${seg2}`);
   ele2.addClass("active");
@@ -122,12 +123,11 @@ var getContent = (year) => {
     let cached = localStorage.getItem(cacheKey);
     let cacheDateKey = `${cacheKey}-date`;
     let cacheDate = localStorage.getItem(cacheDateKey);
-    
+  
     if (cached && cacheDate && new Date().getTime() - new Date(cacheDate).getTime() < 24 * 60 * 60 * 1000) {
       process(JSON.parse(cached));
-      return;
     }
-
+  
     let path = window.location.pathname.split("/").slice(0, -2).join("/");
     let url = `${path}/micro-blog/${year}.json`;
     $.ajax({
@@ -138,7 +138,9 @@ var getContent = (year) => {
         localStorage.setItem(cacheDateKey, new Date().toISOString());
       },
       error: (jqXHR, textStatus, errorThrown) => {
-        if (!cached) processError(jqXHR, textStatus, errorThrown);
+        if (!cached) {
+          processError(jqXHR, textStatus, errorThrown);
+        }
       },
     });
   };
@@ -152,7 +154,8 @@ var getContent = (year) => {
 
 $(() => {
   // Existing initialization
-  getActive();
+  let seg = location.href.split("#")[1] || defaultYear;
+  getActive(seg);
 
   $('div[id^="20"]').each(function () {
     let year = this.id;
@@ -179,7 +182,9 @@ $(() => {
       event.preventDefault(); // Prevent the default anchor behavior
       let seg = href.substring(1); // Remove the '#' from the start
       let [year, id] = seg.split("-");
-      
+
+      getActive(year);  // Update the active tab
+
       if (id) {
         smoothScrollTo(`${year}-${id}`);
         const targetElement = document.getElementById(`${year}-${id}`);
@@ -189,8 +194,6 @@ $(() => {
             targetElement.classList.remove("highlight");
           }, 1500);
         }
-      } else {
-        getActive(); // To handle the tab navigation case
       }
     }
   });
