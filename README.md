@@ -6,7 +6,7 @@ Project Motivation: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.n
 
 Design inspired by: [https://www.yinwang.org](http://www.yinwang.org/)
 
-Theme Demo: [https://www.smallyu.net](https://www.smallyu.net/)
+Theme Demo: [https://en.smallyu.net](https://en.smallyu.net/)
 
 ## Installation
 
