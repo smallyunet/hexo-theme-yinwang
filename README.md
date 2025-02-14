@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Project Motivation: "[Blog Theme Sharing Initiative (Draft)](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)"
+Project Motivation: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/)
 
 Design inspired by: [https://www.yinwang.org](http://www.yinwang.org/)
 
