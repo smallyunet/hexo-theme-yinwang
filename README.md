@@ -71,19 +71,19 @@ hexo clean && hexo server
 
 Run:
    
-...sh
+```
 hexo new page micro-blog
-...
+```
 
 Modify `source/micro-blog/index.md`:
    
-...yaml
+```
 ---
 title: micro-blog
 date: 2023-07-26 11:03:03
 type: micro-blog
 ---
-...
+```
 
 - Change the `title` if needed.
 
