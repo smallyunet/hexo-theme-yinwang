@@ -86,8 +86,19 @@ blockquote {
   padding-left: 15px;
   margin-left: 20px;
   background: #f4f4f4;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 90%;
 }
 
+blockquote p {
+  padding-right: 1px;
+  padding-left: 1px;
+}
+
+blockquote li p {
+  line-height: 0.8;;
+}
 
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
@@ -150,9 +161,27 @@ img.displayed {
   display: block;
 }
 
+video {
+  display: block;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
 @media only screen and (max-width: 800px) {
   img {
     width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+
+  video {
+    width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
   }
 }
 
