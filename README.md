@@ -1,8 +1,17 @@
-## Introduction
+# hexo-theme-yinwang
 
-- **Project Motivation**: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/)
-- **Design Inspired By**: [https://www.yinwang.org](http://www.yinwang.org/)
-- **Theme Demo**: [https://en.smallyu.net](https://en.smallyu.net/)
+This theme brings the look and feel of [Yinwang](https://www.yinwang.org/)
+to Hexo. A demo is available at
+[en.smallyu.net](https://en.smallyu.net/).
+See the article [Blog Theme Sharing Initiative][blog-plan]
+for the ideas behind the project.
+
+## Features
+
+- Micro-blogging page powered by GitHub Issues
+- Built-in tag cloud and categories pages
+- About and display pages
+- Supports English and Simplified Chinese
 
 ## Installation
 
@@ -15,10 +24,11 @@
 2. **Custom Page Types**
    - The `type: tags` field marks a page as a tag page.
    - Supported types: `tags`, `categories`, `about`, `display`, `micro-blog`.
-   - These are specific to this theme and not documented in Hexo’s official documentation.
+   - These types are theme-specific and are not part of Hexo’s official docs.
 
 3. **Theme Configuration**
-   - Icons should be placed in the blog project’s `source` folder (not the theme’s `source`).
+   - Icons belong in the blog project’s `source` folder,
+     not the theme’s own `source` directory.
    - Example: Place `favicon.svg` directly into `source/`.
    - Configurable styles include post titles, tag displays, etc.
 
@@ -31,7 +41,7 @@
    - If the blog project already exists, move into its directory.
    - If not, initialize a new blog project:
    
-```
+```bash
 hexo init blog
 cd blog
 npm i
@@ -42,7 +52,7 @@ npm i
 
 3. **Install Required Dependencies**
    
-```
+```bash
 npm i --save hexo-renderer-pug
 npm i --save hexo-wordcount-sy  
 ```
@@ -53,11 +63,12 @@ npm i --save hexo-wordcount-sy
    - Customize `subtitle` for the blog’s title.
 
 5. **Update Theme Configuration (`_config.yml`)**
-   - No required modifications, but ensure it doesn't conflict with project settings.
+   - No required modifications, but ensure it does not conflict with your
+     project settings.
 
 6. **Start the Preview Server**
    
-```
+```bash
 hexo clean && hexo server
 ```
 
@@ -65,19 +76,20 @@ hexo clean && hexo server
 
 #### Configuration
 
-- Specify the `issue_years`, GitHub username, repository name, and issue number in the theme configuration.
+- Specify the `issue_years`, GitHub username and repository name.
+- Set the issue number in the theme configuration.
 
 #### Create a New Page
 
 Run:
-   
-```
+
+```bash
 hexo new page micro-blog
 ```
 
 Modify `source/micro-blog/index.md`:
-   
-```
+
+```yaml
 ---
 title: micro-blog
 date: 2023-07-26 11:03:03
@@ -89,10 +101,11 @@ type: micro-blog
 
 #### Updating Microblog
 
-1. If `issue_years` is set in `_config.yml`, running `hexo generate` will automatically fetch content.
+1. If `issue_years` is set in `_config.yml`, running `hexo generate` will
+   automatically fetch content.
 2. If `issue_years` is empty, manually update with:
-   
-```
+
+```bash
 hexo generate 2025
 ```
 
@@ -102,13 +115,13 @@ hexo generate 2025
 
 Run:
    
-```
+```bash
 hexo new page tags
 ```
 
 Modify `source/tags/index.md`:
    
-```
+```yaml
 ---
 title: Tags Cloud
 date: 2022-08-30 18:07:20
@@ -120,9 +133,11 @@ type: tags
 
 ### Method 2: Using the Template
 
-Due to the complexity of installation, a pre-configured template is available:
+Due to the complexity of installation, a pre-configured template is
+available.
 
-**Template Repository**: [hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
+**Template Repository**:
+[hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
 **Features Included**:
 - LaTeX rendering
@@ -134,7 +149,7 @@ Due to the complexity of installation, a pre-configured template is available:
 
 ### Theme Configuration Example
 
-```
+```yaml
 # Navigation Menu
 menu:
   Blog: ''
@@ -204,3 +219,5 @@ Use this Hexo plugin for LaTeX support:
 [hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
 
 No additional theme-level support required.
+
+[blog-plan]: https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/
