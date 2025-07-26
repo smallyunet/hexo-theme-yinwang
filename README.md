@@ -1,95 +1,71 @@
-# hexo-theme-yinwang
+[[English](README.md) | 中文]
 
-This theme brings the look and feel of [Yinwang](https://www.yinwang.org/)
-to Hexo. A demo is available at
-[en.smallyu.net](https://en.smallyu.net/).
-See the article [Blog Theme Sharing Initiative][blog-plan]
-for the ideas behind the project.
+## 简介
 
-## Features
+项目动机：《[博客主题共享计划（草稿）](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
 
-- Micro-blogging page powered by GitHub Issues
-- Built-in tag cloud and categories pages
-- About and display pages
-- Supports English and Simplified Chinese
+样式设计来自: [https://www.yinwang.org](http://www.yinwang.org/)
 
-## Installation
+主题样式演示：[https://www.smallyu.net](https://www.smallyu.net/)
 
-### Instructions
+## 安装
 
-1. **Multi-language Support**
-   - Modify the `language` field in the blog project's `_config.yml` file.
-   - Available options: `en`, `zh-cn`.
+### 使用说明
 
-2. **Custom Page Types**
-   - The `type: tags` field marks a page as a tag page.
-   - Supported types: `tags`, `categories`, `about`, `display`, `micro-blog`.
-   - These types are theme-specific and are not part of Hexo’s official docs.
+1. 支持多语言，需要修改博客项目 `_config.yml` 文件中的 `language` 字段：
+    - en
+    - zh-cn
 
-3. **Theme Configuration**
-   - Icons belong in the blog project’s `source` folder,
-     not the theme’s own `source` directory.
-   - Example: Place `favicon.svg` directly into `source/`.
-   - Configurable styles include post titles, tag displays, etc.
+2. `type: tags` 的作用是标识当前页面为标签页，目前支持 `tags`、`categories`、`about`、`display`、`micro-blog`，这些是主题自定义的内容，不在 hexo 的文档里
 
-4. **Support & Contributions**
-   - For any issues or feature requests, use the issue tracker or submit a PR.
+3. 关于主题配置
+    - icon 的路径是项目的 `source` 文件夹下（不是主题的 source），直接把 `favicon.svg` 放到 `source` 里
+    - 很多样式是可以配置的，比如文章标题、是否在文章链接后显示标签等
 
-### Method 1: Direct Installation
+4. 主题使用过程中有任何疑问、发现任何问题，欢迎在 issue 中讨论或者 pr
 
-1. **Navigate to the Blog Project Directory**
-   - If the blog project already exists, move into its directory.
-   - If not, initialize a new blog project:
-   
-```bash
-hexo init blog
-cd blog
-npm i
+### 方式一：直接安装
+
+1. 进入博客项目目录
+    - 如果已经创建博客项目，直接进入目录
+    - 如果还未创建博客项目，执行 `hexo init blog` 初始化项目，进入 `blog` 目录，执行 `npm i`
+
+2. 将主题复制到博客项目的 `themes` 目录下
+
+3. 执行以下命令，安装必要依赖
+
 ```
-
-2. **Copy the Theme**
-   - Place the theme into the `themes` directory.
-
-3. **Install Required Dependencies**
-   
-```bash
 npm i --save hexo-renderer-pug
 npm i --save hexo-wordcount-sy  
 ```
 
-4. **Update Blog Configuration (`_config.yml`)**
-   - Set `theme: hexo-theme-yinwang`.
-   - Disable default highlighting: `highlight -> enable: false`.
-   - Customize `subtitle` for the blog’s title.
+4. 博客项目的 `_config.yml` 文件配置
+    - 将 `theme` 的值修改为 `hexo-theme-yinwang`
+    - 将 `highlight` 下 `enable` 的值修改为 `false`
+    - 将 `subtitle` 的值修改为自己博客的标题
 
-5. **Update Theme Configuration (`_config.yml`)**
-   - No required modifications, but ensure it does not conflict with your
-     project settings.
+5. 主题的 `_config.yml` 文件配置
+    - 不必须改，这里是提醒一下和项目的配置文件区分开
 
-6. **Start the Preview Server**
-   
-```bash
-hexo clean && hexo server
+6. 运行 `hexo clean && hexo server` 启动预览
+
+#### 微博页
+
+##### 配置
+
+需要在主题的配置页面，填写哪一个年份的微博，使用的用户名、仓库名、issue编号。
+
+##### 新建页面
+
+运行命令新建页面：
+
 ```
-
-### Micro-blog Page
-
-#### Configuration
-
-- Specify the `issue_years`, GitHub username and repository name.
-- Set the issue number in the theme configuration.
-
-#### Create a New Page
-
-Run:
-
-```bash
 hexo new page micro-blog
 ```
 
-Modify `source/micro-blog/index.md`:
+打开文件 `source/micro-blog/index.md`，在文件头部的 front-matter 中添加 `type: micro-blog`，添加之后类似这样：
 
-```yaml
+```
 ---
 title: micro-blog
 date: 2023-07-26 11:03:03
@@ -97,127 +73,108 @@ type: micro-blog
 ---
 ```
 
-- Change the `title` if needed.
+`title` 可以随意改为想要的标题内容。
 
-#### Updating Microblog
+##### 更新微博
 
-1. If `issue_years` is set in `_config.yml`, running `hexo generate` will
-   automatically fetch content.
-2. If `issue_years` is empty, manually update with:
+1. 如果配置文件的 `issue_years` 内容不为空，会在执行 `hexo generate` 命令时自动获取对应的微博内容。
 
-```bash
-hexo generate 2025
+2. 也可以保持配置文件的 `issue_years` 内容为空，执行 `hexo generate 2023` 这样的命令。
+
+#### 标签页
+
+运行命令新建页面：
+
 ```
-
-### Tags Page
-
-#### Create a New Page
-
-Run:
-   
-```bash
 hexo new page tags
 ```
 
-Modify `source/tags/index.md`:
-   
-```yaml
+打开文件 `source/tags/index.md`，在文件头部的 front-matter 中添加 `type: tags`，添加之后类似这样：
+
+```
 ---
-title: Tags Cloud
+title: 标签云
 date: 2022-08-30 18:07:20
 type: tags
 ---
 ```
 
-- Change `title` as needed.
+`title` 可以随意改为想要的标题内容。
 
-### Method 2: Using the Template
+### 方式二：使用模版
 
-Due to the complexity of installation, a pre-configured template is
-available.
+由于主题的安装步骤比较繁琐，为了能够更加简便地使用本主题，这里提供了已经配置好主题的模板站点，可以直接下载使用。模板站点使用最新的 hexo 初始化，除了必要的配置，没有任何多余的修改。
 
-**Template Repository**:
-[hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
+模板地址：[https://github.com/smallyunet/hexo-theme-yinwang-demo](https://github.com/smallyunet/hexo-theme-yinwang-demo)
 
-**Features Included**:
-- LaTeX rendering
-- Micro-blog page
-- Tag cloud page
-- Categories page
-- About page
-- External links
+模板增加的支持：
+  - Latex 渲染
+  - 微博页面
+  - 标签云页面
+  - 分类页面
+  - 关于页面
+  - 外链
 
-### Theme Configuration Example
+### 主题配置示例
 
-```yaml
-# Navigation Menu
+```
+# 导航栏 开头不带斜杠
 menu:
-  Blog: ''
-  Micro-blog: micro-blog
-  Tag Cloud: tags
-  About: about
+  博客: ''
+  微博: micro-blog
+  标签云: tags
+  关于: about
 
-# Pagination
+# 建议页数大于1开启
 paginator: false
 
-# Header Settings
+# 头部
 header:
-  blank: false     # Open links in a new tab
+  blank: false     # 头部链接是否新标签页打开
 
-# Article List
+# 文章列表
 list:
-  date: true       # Show post dates
-  wordcount: true  # Show word count
+  date: true       # 文章列表是否显示日期
+  wordcount: true   # 是否显示字数统计
 
-# Footer
+# 脚部
 footer:
-  display: false
-  href: ""
-  text: "© domain name"
+  display: false               # 是否显示footer
+  href: ""                     # 是否给底部内容加上超链接，可以用于展示ICP备案链接
+  text: "© domain name"        # footer内容, 当href为空时，仅展示此文字
 
-# Post Settings
+# 文章页
 post:
-  title_h1: true
-  blank: false
-  backHome: false
-  backhome_right: false
-  backHome_hr: false
-  backHome_prefix: "↶ "
-  backHome_content: "Back to Home"
-  backHome_suffix: ""
-  show_tags: true
+  title_h1: false               # 文章是否使用 h1 标题
+  blank: false                 # 文章是否新标签页打开
+  backHome: false              # 文章末尾是否显示返回首页
+  backhome_right: false        # 返回首页内容是否右对齐
+  backHome_hr: false           # 返回首页前是否显示分割线
+  backHome_prefix: "↶ "        # 返回首页的前缀内容
+  backHome_content: "返回首页"   # 返回首页的主体内容
+  backHome_suffix: ""          # 返回首页的后缀内容
+  show_tags: true              # 文章末尾是否显示标签
 
-# Tag Cloud
+# 标签云
 tags:
-  all: true
+  all: true       # 标签云页面是否显示全部标签
 
-# Micro-blog
+# 微博
 github:
-  owner: smallyunet
-  repo: hexo-blog
+  owner: username
+  repo: repo_name
 micro_blogs:
-  - year: 2020
-    issue: 7
-  - year: 2021
-    issue: 10
-  - year: 2022
-    issue: 19
   - year: 2023
-    issue: 29
+    issue: 1
 issue_years: []
 
-# Google Analytics
 google_analysis:
-  enable: true
+  enable: false
   id: G-XXXXXXXXXXX
+
 ```
 
-## Formula Rendering
+## 公式渲染
 
-Use this Hexo plugin for LaTeX support:
+可以使用这个 hexo 插件：[https://github.com/next-theme/hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)。主题层面不需要做额外的支持。
 
-[hexo-filter-mathjax](https://github.com/next-theme/hexo-filter-mathjax)
-
-No additional theme-level support required.
-
-[blog-plan]: https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/
