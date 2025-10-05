@@ -8,7 +8,7 @@
 
 - **项目动机**：《[博客主题共享计划（草稿）](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
 - **设计灵感**：[https://www.yinwang.org](http://www.yinwang.org/)
-- **在线演示**：[https://www.smallyu.net](https://www.smallyu.net/)
+- **在线演示**：[https://smallyunet.github.io/hexo-theme-yinwang-demo/](https://smallyunet.github.io/hexo-theme-yinwang-demo//)
 
 ## ✨ 特性
 

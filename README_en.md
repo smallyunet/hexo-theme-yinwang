@@ -8,7 +8,7 @@
 
 - **Project Motivation**: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/)
 - **Design Inspiration**: [https://www.yinwang.org](http://www.yinwang.org/)
-- **Live Demo**: [https://en.smallyu.net](https://en.smallyu.net/)
+- **Live Demo**: [https://smallyunet.github.io/hexo-theme-yinwang-demo/](https://smallyunet.github.io/hexo-theme-yinwang-demo//)
 
 ## ✨ Features
 
