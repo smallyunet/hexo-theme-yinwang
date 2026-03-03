@@ -25,6 +25,7 @@ body.mobile {
 .title {
     cursor: pointer;
     padding: 15px 20px;
+    position: relative;
 }
 
 .title a {
@@ -110,11 +111,22 @@ div.date {
     color: darkgray;
 }
 
+div.excerpt {
+    font-size: 85%;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    padding-right: 80px;
+}
+
 div.word-count {
-    float: right;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     color: darkgray;
     line-height: 100%;
-    min-width: 60px;
     font-size: 85%;
 }
 
@@ -124,6 +136,9 @@ div.word-count {
     } 
     ul.tags {
         display: none;
+    }
+    div.excerpt {
+        font-size: 90%;
     }
 } 
 
