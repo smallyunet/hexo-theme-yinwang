@@ -123,6 +123,15 @@ H4 {
   margin-bottom: 20px;
 }
 
+.excerpt {
+  text-align: center;
+  font-size: 85%;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
 .box {
   padding: 2% 8% 5% 8%;
   border: 1px solid var(--border-color);
