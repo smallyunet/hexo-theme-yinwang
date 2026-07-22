@@ -2,12 +2,13 @@
 
 [[English] | [中文](README.md)]
 
-> A clean and elegant Hexo blog theme inspired by Wang Yin's personal website
+> A clean and elegant Hexo blog theme inspired by the pre-October 2025 style of Wang Yin's personal website
 
 ## 📖 Introduction
 
 - **Project Motivation**: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/)
-- **Design Inspiration**: [https://www.yinwang.org](http://www.yinwang.org/)
+- **Design Inspiration**: Wang Yin's personal website
+- **Design Note**: This theme replicates the [pre-October 2025 style](https://web.archive.org/web/20251011152025/https://www.yinwang.org/) of Wang Yin's personal website, which differs from its [current style](https://www.yinwang.org/).
 - **Live Demo**: [https://smallyunet.github.io/hexo-theme-yinwang-demo/](https://smallyunet.github.io/hexo-theme-yinwang-demo/)
 
 ## ✨ Features
@@ -350,7 +351,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🙏 Acknowledgments
 
-- Design inspiration from [Wang Yin's personal website](https://www.yinwang.org/)
+- Design inspiration from [Wang Yin's personal website (before the October 2025 redesign)](https://web.archive.org/web/20251011152025/https://www.yinwang.org/)
 - Thanks to all contributors and users for their support
 
 ---

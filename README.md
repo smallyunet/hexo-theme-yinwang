@@ -2,12 +2,13 @@
 
 [[English](README_en.md) | 中文]
 
-> 一个简洁优雅的 Hexo 博客主题，设计灵感来自王垠的个人网站
+> 一个简洁优雅的 Hexo 博客主题，设计灵感来自王垠个人网站 2025 年 10 月改版前的样式
 
 ## 📖 简介
 
 - **项目动机**：《[博客主题共享计划（草稿）](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
-- **设计灵感**：[https://www.yinwang.org](http://www.yinwang.org/)
+- **设计灵感**：王垠个人网站
+- **设计说明**：本主题复刻的是王垠个人网站[2025 年 10 月改版前的样式](https://web.archive.org/web/20251011152025/https://www.yinwang.org/)，与其[当前样式](https://www.yinwang.org/)不同。
 - **在线演示**：[https://smallyunet.github.io/hexo-theme-yinwang-demo/](https://smallyunet.github.io/hexo-theme-yinwang-demo/)
 
 ## ✨ 特性
@@ -350,10 +351,9 @@ $$
 
 ## 🙏 致谢
 
-- 设计灵感来自 [王垠的个人网站](https://www.yinwang.org/)
+- 设计灵感来自 [王垠的个人网站（2025 年 10 月改版前）](https://web.archive.org/web/20251011152025/https://www.yinwang.org/)
 - 感谢所有贡献者和使用者的支持
 
 ---
 
 如果这个主题对你有帮助，请考虑给个 ⭐️ Star！
-
