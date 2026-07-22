@@ -6,7 +6,6 @@
 
 ## 📖 简介
 
-- **项目动机**：《[博客主题共享计划（草稿）](https://smallyu.net/2021/02/11/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E5%85%B1%E4%BA%AB%E8%AE%A1%E5%88%92/)》
 - **设计灵感**：王垠个人网站
 - **设计说明**：本主题复刻的是王垠个人网站[2025 年 10 月改版前的样式](https://web.archive.org/web/20251011152025/https://www.yinwang.org/)，与其[当前样式](https://www.yinwang.org/)不同。
 - **在线演示**：[https://smallyunet.github.io/yinwang-blog/](https://smallyunet.github.io/yinwang-blog/)

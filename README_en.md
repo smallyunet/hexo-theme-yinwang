@@ -6,7 +6,6 @@
 
 ## 📖 Introduction
 
-- **Project Motivation**: [Blog Theme Sharing Initiative (Draft)](https://en.smallyu.net/2021/02/11/Blog%20Theme%20Sharing%20Plan%20(Draft)/)
 - **Design Inspiration**: Wang Yin's personal website
 - **Design Note**: This theme replicates the [pre-October 2025 style](https://web.archive.org/web/20251011152025/https://www.yinwang.org/) of Wang Yin's personal website, which differs from its [current style](https://www.yinwang.org/).
 - **Live Demo**: [https://smallyunet.github.io/yinwang-blog/](https://smallyunet.github.io/yinwang-blog/)
