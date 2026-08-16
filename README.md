@@ -19,7 +19,7 @@
 - 📊 分类页面
 - 👤 关于页面
 - 📄 自定义页面支持
-- 🔢 字数统计
+- 🔢 内置字数统计（无需额外插件）
 - 📐 LaTeX 公式渲染支持
 
 ## 📋 使用要求
@@ -69,8 +69,9 @@ git clone https://github.com/smallyunet/hexo-theme-yinwang.git themes/hexo-theme
 
 ```bash
 npm install --save hexo-renderer-pug
-npm install --save hexo-wordcount-sy
 ```
+
+字数统计功能已内置于主题，无需安装额外插件。
 
 #### 4. 配置博客
 

@@ -19,7 +19,7 @@
 - 📊 Categories page
 - 👤 About page
 - 📄 Custom page support
-- 🔢 Word count statistics
+- 🔢 Built-in word count statistics (no additional plugin required)
 - 📐 LaTeX formula rendering support
 
 ## 📋 Requirements
@@ -69,8 +69,9 @@ git clone https://github.com/smallyunet/hexo-theme-yinwang.git themes/hexo-theme
 
 ```bash
 npm install --save hexo-renderer-pug
-npm install --save hexo-wordcount-sy
 ```
+
+Word count support is built into the theme and requires no additional plugin.
 
 #### 4. Configure Blog
 
