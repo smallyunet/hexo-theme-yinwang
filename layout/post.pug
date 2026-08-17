@@ -4,6 +4,8 @@ block content
     if theme.post.title_h1
       h1= page.title
       div.time= date(page.date, 'YYYY-MM-DD')
+      if page.excerpt
+        div.excerpt= page.excerpt
       if theme.post.show_tags
         if page.tags.length
           ul.tags

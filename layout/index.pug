@@ -8,16 +8,19 @@ block content
             if (theme.list.date)
               div.date= date(post.date, 'YYYY-MM-DD')
             a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
-            if (theme.list.wordcount)
-              div.word-count= wordcount(post.content, '') +  __('word_count')
-            if (theme.post.show_tags)
-              if post.tags.length
-                ul.tags
-                  - post.tags.each(function(tag){
-                    li
-                      span #
-                      a(href= config.root + tag.path)= tag.name
-                  - });
+            if post.excerpt
+              div.excerpt= post.excerpt
+            div.right-info
+              if (theme.list.wordcount)
+                div.word-count= wordcount(post.content, '') +  __('word_count')
+              if (theme.post.show_tags)
+                if post.tags.length
+                  ul.tags
+                    - post.tags.each(function(tag){
+                      li
+                        span #
+                        a(href= config.root + tag.path)= tag.name
+                    - });
   if (theme.paginator)
     div(class="paginator")
       -
