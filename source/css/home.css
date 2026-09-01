@@ -1,3 +1,61 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --text-muted: darkgray;
+  --border-color: LightGrey;
+  --border-color-light: #ddd;
+  --border-color-medium: #c0d3eb;
+  --border-color-dark: #dfe2e5;
+  --border-color-darker: #c6cbd1;
+  --link-color: #77b3e0;
+  --link-hover-color: #559bce;
+  --link-hover-bg: LightGrey;
+  --code-bg: #f8f8f8;
+  --blockquote-bg: #f4f4f4;
+  --navbar-bg: #fff;
+  --panel-bg: #fff;
+  --panel-heading-bg: #fff;
+  --hover-bg: #eee;
+  --table-bg: #fff;
+  --table-bg-alt: #f6f8fa;
+  --micro-blog-date-bg: #f1f8ff;
+  --micro-blog-line-bg: #e1e4e8;
+  --highlight-border: #ff9800;
+  --highlight-shadow: rgba(255, 152, 0, 0.7);
+  --loading-bg: #ffffff;
+  --img-shadow: #555;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-muted: #888888;
+  --border-color: #3a3a3a;
+  --border-color-light: #4a4a4a;
+  --border-color-medium: #4a5568;
+  --border-color-dark: #4a5568;
+  --border-color-darker: #4a5568;
+  --link-color: #64b5f6;
+  --link-hover-color: #90caf9;
+  --link-hover-bg: #3a3a3a;
+  --code-bg: #2d2d2d;
+  --blockquote-bg: #2d2d2d;
+  --navbar-bg: #2d2d2d;
+  --panel-bg: #2d2d2d;
+  --panel-heading-bg: #2d2d2d;
+  --hover-bg: #3a3a3a;
+  --table-bg: #2d2d2d;
+  --table-bg-alt: #252525;
+  --micro-blog-date-bg: #2a2a3a;
+  --micro-blog-line-bg: #3a3a4a;
+  --highlight-border: #ffb74d;
+  --highlight-shadow: rgba(255, 183, 77, 0.7);
+  --loading-bg: #2d2d2d;
+  --img-shadow: #000000;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -11,6 +69,9 @@ table {
 body {
     font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
     font-size: 21px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 body.mobile {
@@ -20,6 +81,15 @@ body.mobile {
 .navbar-brand {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     font-size: 100%;
+}
+
+.navbar-nav > li > a,
+.navbar-brand {
+    text-shadow: none;
+}
+
+[data-theme="dark"] .navbar-nav > li > a:hover {
+    color: #fff;
 }
 
 .title {
@@ -32,25 +102,29 @@ body.mobile {
 }
 
 li.title:hover {
-    background-color: #eee;
+    background-color: var(--hover-bg);
 }
 
 .panel {
     border-radius: 0;
     font-size: 100%;
+    background-color: var(--panel-bg);
+    transition: background-color 0.3s;
 }
 
 .panel-default > .panel-heading {
     background-image: none;
-    background-color: #fff;
+    background-color: var(--panel-heading-bg);
     font-size: 100%;
+    transition: background-color 0.3s;
 }
 
 .navbar-default {
     background-image: none;
-    background-color: #fff;
+    background-color: var(--navbar-bg);
     box-shadow: none;
     font-size: 100%;
+    transition: background-color 0.3s;
 }
 
 .navbar-brand, .navbar-nav {
@@ -107,12 +181,12 @@ div.outer {
 
 div.date {
     font-size: 80%;
-    color: darkgray;
+    color: var(--text-muted);
 }
 
 div.word-count {
     float: right;
-    color: darkgray;
+    color: var(--text-muted);
     line-height: 100%;
     min-width: 60px;
     font-size: 85%;
@@ -135,14 +209,17 @@ div.word-count {
 
 .paginator .page-number,
 .paginator .extend {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color-light);
     cursor: pointer;
     padding: 15px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .paginator .page-number:hover,
 .paginator .extend:hover {
-    background-color: #eee;
+    background-color: var(--hover-bg);
     font-size: 100%;
 }
 
@@ -200,7 +277,8 @@ div.word-count {
   height: 200px;
   display: inline-block;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--loading-bg);
+  transition: background 0.3s;
 }
 .ldio-fwkeq5l2tj8 {
   width: 100%;
@@ -244,10 +322,11 @@ div.word-count {
 
 .micro-blog blockquote {
     padding: 0 1em;
-    color: #6a737d;
-    border-left: .25em solid #dfe2e5;
+    color: var(--text-secondary);
+    border-left: .25em solid var(--border-color-dark);
     margin-block-start: 1em;
     margin-block-end: 1em;
+    transition: color 0.3s, border-color 0.3s;
 }
 
 .mobile .micro-blog blockquote {
@@ -264,9 +343,11 @@ div.word-count {
 
 .micro-blog .list-group-item {
     margin-bottom: 40px;
-    border: 1px solid #c0d3eb;
+    border: 1px solid var(--border-color-medium);
     padding: 0px;
     border-radius: 6px;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .micro-blog .list-group-item:after {
@@ -277,19 +358,21 @@ div.word-count {
     display: block;
     width: 2px;
     content: "";
-    background-color: #e1e4e8;
+    background-color: var(--micro-blog-line-bg);
     z-index: -1;
+    transition: background-color 0.3s;
 }
 
 .micro-blog .list-group-item .date {
     font-size: 90%;
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #c0d3eb;
-    color: #000;
+    background-color: var(--micro-blog-date-bg);
+    border-bottom: 1px solid var(--border-color-medium);
+    color: var(--text-color);
     padding: 5px 20px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     position: relative;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
 .micro-blog .list-group-item .date a {
@@ -303,9 +386,9 @@ div.word-count {
 
 .mobile .micro-blog .list-group-item .date {
     font-size: 90%;
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #c0d3eb;
-    color: #000;
+    background-color: var(--micro-blog-date-bg);
+    border-bottom: 1px solid var(--border-color-medium);
+    color: var(--text-color);
     padding: 10px 25px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
@@ -317,16 +400,18 @@ div.word-count {
 
 /* table style */
 .micro-blog table tr {
-    background-color: #fff;
-    border-top: 1px solid #c6cbd1;
+    background-color: var(--table-bg);
+    border-top: 1px solid var(--border-color-darker);
+    transition: background-color 0.3s;
 }
 .micro-blog table tr:nth-child(2n) {
-    background-color: #f6f8fa;
+    background-color: var(--table-bg-alt);
 }
 .micro-blog table td,
 .micro-blog table th {
     padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+    border: 1px solid var(--border-color-dark);
+    transition: border-color 0.3s;
 }
 
 /* tabs */
@@ -361,25 +446,40 @@ ul.tags li {
 }
 
 ul.tags li span {
-    color: darkgray;
+    color: var(--text-muted);
 }
 
 ul.tags li a {
-    color: #77b3e0;
+    color: var(--link-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 ul.tags li a:hover {
-    color: #559bce;
+    color: var(--link-hover-color);
 }
 
 /* micro blog highlight */
 .highlight {
-    border: 2px solid #ff9800;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+    border: 2px solid var(--highlight-border);
+    box-shadow: 0 0 10px var(--highlight-shadow);
     transition: all 0.5s ease;
 }
 
 .list-group-item {
     transition: all 0.5s ease;
+}
+
+/* dark mode specific overrides */
+[data-theme="dark"] .micro-blog blockquote {
+    color: var(--text-secondary);
+    border-left-color: var(--border-color-dark);
+}
+
+[data-theme="dark"] .list-group-item {
+    background-color: var(--navbar-bg);
+}
+
+[data-theme="dark"] img {
+    box-shadow: 0 0 10px var(--img-shadow);
 }

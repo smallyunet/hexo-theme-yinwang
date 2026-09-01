@@ -55,6 +55,8 @@ html(lang=config.language)
                   )
                   - var href = url.startsWith('http') ? url : root + url
                   a(href=href, target=theme.header.blank ? "_blank" : "_self")= label
+              li
+                a#theme-toggle(href="#", title="切换主题") 浅色模式
     
     if body
       div!= body
